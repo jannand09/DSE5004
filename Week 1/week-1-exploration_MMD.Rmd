@@ -1,0 +1,263 @@
+---
+title: "Week 1 - Explore Simple CSV"
+author: "Chris Healey"
+output:
+  html_document:
+    toc: true
+    theme: united
+---
+    
+    
+    
+    
+    
+# Setting up your environment
+
+## Install R
+Go to https://cran.r-project.org and choose your operation system.
+
+## Install RStudio
+Go to https://www.rstudio.com/products/rstudio/download/ and choose the RStudio Desktop Free.
+
+## Install common libraries
+
+These are three libraries we will find useful for this first session.  This only needs to be run once.
+```{r warning=FALSE}
+#install.packages("tidyverse") 
+#install.packages("ggplot2")
+#install.packages("tidytuesdayR")
+```
+
+
+## Load libraries
+After the libraries are installed, we load them so they will be readily available.
+
+```{r}
+library(tidyverse)
+library(ggplot2)
+library(tidytuesdayR)
+```
+
+
+
+
+
+
+
+
+
+## Create a file and folder structure
+
+I like a structure something similar to:
+
+  - /data
+  - /output
+  - /deliverables
+  - /resources
+
+# Create notebook to work on data
+
+  - Read data into R
+  - Look at data within RStudio
+    - Visually
+    - Using spec and summary
+
+## Read data into R
+
+You can read data into R through a few different approaches.
+
+### Direct link to CSV on website
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+#tidyverse (my preferred way)
+df <- read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-03-29/sports.csv')
+```
+
+### Copy files to local directory
+```{r}
+df <- read_csv("data/sports.csv")
+```
+
+
+
+
+
+
+### Use the TidyTuesday package to pull data
+```{r}
+tuesdata <- tidytuesdayR::tt_load(2022, week = 13)
+df <- tuesdata$sports
+```
+
+In general, I find `tidyverse` functions to be well-supported and flexible for many different uses, so I will stick with that as my standard.  Feel free to play with different options (for example, `data.table` has significant speed benefits with extremely large datasets).
+
+
+
+
+
+
+
+
+## Visually inspect data in RStudio
+
+1. Print data frame in notebook
+2. Use viewer
+
+```{r}
+print(df)
+```
+
+
+
+
+
+
+
+## Check columns and data using spec, problems, and summary
+
+```{r}
+spec(df)
+```
+
+
+
+
+
+```{r}
+summary(df)
+```
+
+
+
+
+
+
+
+
+```{r}
+problems(df)
+```
+
+
+
+
+
+
+
+## Test automatic column identification
+
+### Default - identify all columns
+The `readr` package in `tidyverse` reads the first 100 rows and makes a prediction about the type for the column.  This is not perfect, but may suffice for many applications.  It is a "best practice" to either check each column or to specify the type of each column ingested.
+
+Setting `.default` to `"?"` is the same as the above ingestion.
+
+```{r}
+col_list = cols(
+  .default = "?"
+  )
+
+df <- read_csv(file="data/sports.csv", col_types = col_list)
+print(spec(df))
+```
+
+
+
+
+
+
+
+
+### Identify all columns as character
+You don't have to allow all of the columns to be identified automatically. https://readr.tidyverse.org/reference/cols.html details other possibilities.  
+
+You can ingest all columns to "character" types
+
+```{r}
+col_list = cols(
+  .default = col_character()
+  )
+
+df <- read_csv(file="data/sports.csv", col_types = col_list)
+print(spec(df))
+```
+
+
+
+
+
+Or specify which columns you want to manually assign types to (as below).  Note that if you misspell the column name, R will not throw an error.
+```{r}
+col_list = cols(
+  .default = "?",
+  partic_men = col_integer(),
+  partic_women = col_integer(),
+  )
+
+df <- read_csv(file="data/sports.csv", col_types = col_list)
+print(spec(df))
+```
+
+
+
+
+
+
+# Example visualizations -- Merrimack only
+```{r}
+df <- read_csv("data/sports.csv")
+
+mc <- df %>% filter(str_detect(institution_name,"Merrimack") & str_detect(sports,"Soccer"))
+```
+
+
+
+
+
+```{r}
+g <- ggplot(data=mc) + geom_col(aes(x=year,y=partic_women,group=sports,fill=sports,color=sports))
+print(g)
+```
+
+
+
+
+
+
+
+# Questions
+- What would you improve in this plot?
+- What other relationships would you like to see?
+
+# Other transformations
+
+```{r}
+df <- read_csv("data/sports.csv")
+df %>% group_by(state_cd) %>% 
+  summarize(partic_women = sum(partic_women, na.rm=TRUE),partic_men = sum(partic_men,na.rm=TRUE),ratio = partic_women/partic_men) %>% 
+  arrange(desc(ratio))
+
+```
+
+
+
+
+
+
+
+
+```{r}
+df %>% group_by(institution_name, state_cd) %>% 
+  summarize(partic_women = sum(partic_women, na.rm=TRUE),partic_men = sum(partic_men,na.rm=TRUE),ratio = partic_women/partic_men) %>% 
+  arrange(desc(ratio))
+```
+
+
+
+
+
+```{r}
+df %>% 
+  filter(institution_name %in% c("College of William and Mary", "Merrimack College", "Georgia Institute of Technology-Main Campus")) %>% 
+  group_by(institution_name, state_cd, year) %>% summarize(partic_women = sum(partic_women, na.rm=TRUE),partic_men = sum(partic_men,na.rm=TRUE),ratio = partic_women/partic_men) %>%
+  arrange(institution_name,year) 
+```
+
