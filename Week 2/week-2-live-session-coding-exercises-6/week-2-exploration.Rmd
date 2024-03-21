@@ -1,0 +1,386 @@
+---
+title: "Week 2 - Working with Datasets"
+author: "Chris Healey"
+output:
+  html_document:
+    toc: true
+    theme: united
+---
+
+This week, we'll be working with Airbnb's open datasets and talking about how to tidy up columns. (Unfortunately, TidyTuesday's datasets follow best practices, not something that will happen with every dataset you come across.)
+
+Objectives
+- Learn how to import subsets to make exploration easier
+- Go through ways to transform columns (especially, dollar, percentage)
+    
+# Import Data
+Source: http://insideairbnb.com/get-the-data.html
+
+
+
+
+
+
+
+
+## Import each file
+
+```{r}
+library(tidyverse)
+calendar = read_csv("data/calendar.csv.gz")
+listings = read_csv("data/listings.csv.gz")
+neighborhoods = read_csv("data/neighbourhoods.csv")
+```
+
+
+
+
+
+## For beginning explorations, limit the number of rows
+```{r}
+calendar = read_csv("data/calendar.csv.gz",n_max = 500, show_col_types = FALSE)
+listings = read_csv("data/listings.csv.gz", n_max = 500, show_col_types = FALSE)
+neighborhoods = read_csv("data/neighbourhoods.csv", n_max=500, show_col_types = FALSE)
+```
+
+
+
+
+
+
+
+# Manipulating columns and column types
+Last week's live session went over handling column types at ingestion.  There are many advantages to doing it that way, but those methods aren't necessarily perfect.  This week, I will go over some methods you might want to use for transforming columns.
+
+## Example 1: Handling Dollars
+```{r}
+print(head(listings$price))
+```
+
+
+
+
+
+To manipulate and analyze this data, we should change it from `character` to `numeric`.
+```{r}
+print(summary(listings$price))
+```
+
+
+
+### Option 1a: Convert using `as.numeric()` and string substitution
+```{r}
+listings$price_dollars = as.numeric(listings$price)
+print(head(listings$price_dollars))
+print(summary(listings$price_dollars))
+```
+Unfortunately, just the simple `as.numeric()` doesn't work
+
+**Question:** Why would I create a new column called price_dollars?
+
+
+
+
+
+
+### Option 0: Convert using 
+    `gsub` (  #gsub(pattern, replacement, x)  )
+```{r}
+listings$price_dollars = as.numeric(gsub("[\\$,]","",listings$price))     
+print(head(listings$price_dollars))
+print(summary(listings$price_dollars))
+```
+
+
+
+
+
+
+### Option 1b: Convert using 
+    `parse_number()`  -- This parses the first number it finds, dropping any non-numeric characters before the first number and all characters after the first number. 
+    `mutate` creates new columns that are functions of existing variables. It can also modify (if the name is the same as an existing column) and delete columns (value to NULL).
+```{r}
+listings <- listings %>% mutate(price_dollars = parse_number(price))    #   %>% is parsing in a lot of R packages, meaning it feeds the left as the first argument of the right. Not that useful here but it can really increase the readability of nested commands
+print(head(listings$price_dollars))
+print(summary(listings$price_dollars))
+```
+
+
+
+
+
+
+
+## Example 2: Filling in `NA` Values in `bedrooms`
+
+### Option 2a: Write `ifelse` Code
+```{r}
+listings$bedrooms_cleaned <- ifelse(is.na(listings$bedrooms),0,listings$bedrooms)
+```
+
+
+
+
+
+```{r}
+print(summary(listings$bedrooms))
+print(summary(listings$bedrooms_cleaned))
+```
+
+
+
+
+### Option 2b: Use `replace_na()`
+```{r}
+listings$bedrooms_cleaned <- NULL
+listings$bedrooms_cleaned <- replace_na(listings$bedrooms,replace=0)
+print(summary(listings$bedrooms_cleaned))
+```
+
+
+
+
+```{r}
+print(summary(listings$bedrooms_cleaned))
+print(listings %>% select(bedrooms,bedrooms_cleaned))
+```
+
+
+
+
+
+
+
+
+## Example 3: Managing percentages in `host_response_rate`
+
+### Option 1: `as.numeric()` and `gsub` 
+```{r}
+listings$host_response_rate_perc <- as.numeric(gsub("[%]","",listings$host_response_rate))/100
+print(summary(listings$host_response_rate))
+print(summary(listings$host_response_rate_perc))
+
+```
+
+
+
+
+
+### Option 2: `parse_number`
+```{r}
+listings$host_response_rate_perc <- NULL   # Deletes the column
+listings$host_response_rate_perc <- parse_number(listings$host_response_rate)/100
+print(summary(listings$host_response_rate))
+print(summary(listings$host_response_rate_perc))
+```
+
+
+
+
+
+
+
+
+
+
+# Taking a closer look at **listings**
+
+```{r}
+nrow(listings)
+```
+
+```{r}
+ncol(listings)
+```
+
+```{r}
+spec(listings)
+```
+
+```{r}
+na_count <-sapply(listings, function(y) sum(length(which(is.na(y)))))   #The apply collection can be viewed as a substitute to the loop. sapply(X, FUN) function takes list, vector or data frame as input and gives output in vector or matrix. It is useful for operations on list objects and returns a list object of same length of original set. 
+na_count <- data.frame(na_count)
+print(na_count %>% arrange(desc(na_count)))
+```
+
+
+
+
+
+# Using groupby and count to identify common values for categorical values
+```{r}
+listings %>% group_by(neighbourhood) %>% summarize(count=n()) %>% arrange(desc(count))    # See how %>% can be useful here?
+```
+```{r}
+listings %>% group_by(neighbourhood,neighbourhood_cleansed) %>% summarize( count=n()) %>% arrange(desc(count))
+```
+
+
+
+
+
+
+```{r}
+x <- c("1.1", "2", "3", "NA")
+y1=parse_vector(x, col_integer())
+y2=parse_vector(x, col_double())
+```
+
+
+
+
+
+
+
+# Visualization of the day - Bar Charts
+
+## Preparing data for amenities
+```{r}
+listings = read_csv("data/listings.csv.gz", show_col_types = FALSE)
+
+# prepping the data to highlight amenities
+df_plot <- NULL
+df_plot = listings %>% select(amenities) %>% mutate(amenities = parse_vector(amenities, collector=col_character()))
+
+df_plot$amenities_list = as.list(strsplit(df_plot$amenities, ","))
+df_plot <- df_plot %>% unnest_longer(amenities_list) %>% select(amenities_list)   #  unnest_longer() turns each element of a list-column into a row.
+                                                                                  #  select: Selects (and optionally rename) variables in a data frame
+df_plot$mutated <- df_plot %>% mutate(amenities_list = str_replace_all(amenities_list,"[[:punct:]]", ""))   #  str_replace_all(string, pattern, replacement) replaces all matches.
+```
+
+
+
+
+
+
+
+```{r}
+library(ggplot2)
+g <- ggplot(data=df_plot) + geom_bar(aes(x=amenities_list))
+print(g)
+```
+Now, that's a rough chart to follow.  What can we do to improve this?
+
+
+
+
+
+```{r}
+#restrict to top 10 amenities
+df_plot_2 = df_plot %>%
+    group_by(amenities_list) %>%
+    summarise(count = n()) %>%
+    top_n(n = 10, wt = count) %>% arrange(desc(count))
+
+g <- ggplot(data=df_plot_2) + geom_col(aes(x=amenities_list,y=count)) # geom_col is a generalized version of geom_bar
+print(g)
+```
+
+
+
+
+
+```{r}
+# rotate axis labels using the axis.text.x
+df_plot_2 = df_plot %>%
+    group_by(amenities_list) %>%
+    summarise(count = n()) %>%
+    top_n(n = 10, wt = count) %>% arrange(desc(count))
+
+g <- ggplot(data=df_plot_2) + geom_col(aes(x=amenities_list,y=count)) + theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1)) # geom_col is a generalized version of geom_bar
+print(g)
+```
+
+
+
+
+
+
+
+
+
+```{r}
+#sort in descending order
+df_plot_2 = df_plot %>%
+    group_by(amenities_list) %>%
+    summarise(count = n()) %>%
+    top_n(n = 10, wt = count) %>% arrange(desc(count))
+
+g <- ggplot(data=df_plot_2) + geom_col(aes(x=reorder(amenities_list,-count),y=count)) + theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+
+print(g)
+```
+
+
+
+
+
+
+
+
+```{r}
+# relabel the x-axis
+
+#sort in descending order
+df_plot_2 = df_plot %>%
+    group_by(amenities_list) %>%
+    summarise(count = n()) %>%
+    top_n(n = 10, wt = count) %>% arrange(desc(count))
+
+g <- ggplot(data=df_plot_2) + geom_col(aes(x=reorder(amenities_list,-count),y=count)) + xlab("Amenities")
+
+print(g)
+```
+```{r}
+# flip axis to see full label
+
+#sort in descending order
+df_plot_2 = df_plot %>%
+    group_by(amenities_list) %>%
+    summarise(count = n()) %>%
+    top_n(n = 10, wt = count) %>% arrange(desc(count))
+
+g <- ggplot(data=df_plot_2) + geom_col(aes(x=reorder(amenities_list,count),y=count), fill="royalblue") + xlab("Amenities") +coord_flip()+theme_minimal()+ggtitle("Top Advertised Amenities at AirBnB Locations in NY")
+
+print(g)
+```
+
+
+
+
+
+
+
+
+
+
+# Testing code time to run
+Some of you may be interest in checking how long particular pieces of code take to run.  While there may not be a discernible difference in the examples above, time can grow exponentially as the size of the dataframes increase.
+
+Here are a couple of ways to measure time: https://stackoverflow.com/questions/6262203/measuring-function-execution-time-in-r 
+
+Here's how I would do it.
+
+```{r}
+listings = read_csv("data/listings.csv.gz",show_col_types = FALSE)
+
+```
+
+
+```{r}
+NUM_OF_REPLICATIONS = 10000
+example2a <- function(listings){
+  listings$bedrooms_cleaned <- ifelse(is.na(listings$bedrooms),0,listings$bedrooms)
+  return(listings)
+}
+
+example2b <- function(listings){
+  listings$bedrooms_cleaned <- replace_na(listings$bedrooms,replace=0)
+  return(listings)
+}
+
+system.time( replicate(NUM_OF_REPLICATIONS, example2a(listings) ) )
+
+system.time( replicate(NUM_OF_REPLICATIONS, example2b(listings) ) )
+```
+Here you can see that for the full listing dataset, `replace_na()` is roughly twice as fast (on my machine) as `ifelse`.  Functions that are developed by professionals (like in base-R or tidyr packages) do tend to run a little faster than what I write myself.
