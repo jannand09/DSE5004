@@ -1,0 +1,114 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library(tidyverse)
+
+individuals <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-06-23/individuals.csv')
+locations <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-06-23/locations.csv')
+```
+
+```{r}
+locations <- locations %>% mutate(date = as.Date(timestamp))
+location_summary <- locations %>% group_by(date) %>% summarize(count = n()) %>% mutate(date = format(date,"%Y-%m-%d"))
+```
+
+# Topic 1: Make sure your aesthetics are date or POSIXct types
+```{r}
+g <- ggplot(data = location_summary) + 
+  geom_line(aes(x=date,y=count)) +
+  ggtitle("Recorded Caribou Events") + 
+  xlab("Date") + 
+  ylab("Sightings per day") + 
+  theme_minimal()
+
+print(g)
+```
+```{r}
+location_summary <- locations %>% group_by(date) %>% summarize(count = n())
+g <- ggplot(data = location_summary) + 
+  geom_line(aes(x=date,y=count)) +
+  ggtitle("Recorded Caribou Events") + 
+  xlab("Date") + 
+  ylab("Sightings per day") + 
+  theme_minimal()
+
+print(g)
+```
+
+# Topic 2: Choose appropriate tick marks
+```{r}
+#https://r-graph-gallery.com/279-plotting-time-series-with-ggplot2.html
+
+location_summary <- locations %>% group_by(date) %>% summarize(count = n()) %>% filter(date > "2005-01-01" & date < "2006-01-01")
+
+g <- ggplot(data = location_summary) + 
+  geom_line(aes(date,count)) +
+  ggtitle("Recorded Caribou Events in 2005") + 
+  xlab("Date") + 
+  ylab("Sightings per day") + 
+  theme_minimal() + 
+  scale_x_date(date_labels = "%b", # month abbreviations
+               date_breaks = "1 month", #tick for every month
+               date_minor_breaks = "1 month")  
+
+print(g)
+```
+
+# Topic 3: Handle gaps with care
+
+## Plot only points
+```{r}
+#https://r-graph-gallery.com/279-plotting-time-series-with-ggplot2.html
+
+location_summary <- locations %>% group_by(date) %>% summarize(count = n()) %>% filter(date < "2005-01-01")
+
+g <- ggplot(data = location_summary) + 
+  geom_point(aes(date,count)) +
+  ggtitle("Recorded Caribou Events (multiple years missing)") + 
+  xlab("Date") + 
+  ylab("Sightings per day") + 
+  theme_minimal()
+
+print(g)
+```
+```{r}
+#https://r-graph-gallery.com/279-plotting-time-series-with-ggplot2.html
+
+location_summary <- locations %>% group_by(date) %>% summarize(count = n()) %>% filter(date < "2005-01-01")
+
+g <- ggplot(data = location_summary) + 
+  geom_line(aes(date,count)) +
+  ggtitle("Recorded Caribou Events (multiple years missing)") + 
+  xlab("Date") + 
+  ylab("Sightings per day") + 
+  theme_minimal()
+
+print(g)
+
+```
+
+
+## Facet only on year
+```{r}
+library(lubridate)
+location_summary <- locations %>% group_by(date) %>% summarize(count = n()) %>% filter(date < "2005-01-01") %>% mutate(year = year(date))
+
+g <- ggplot(data = location_summary) + 
+  geom_line(aes(date,count)) +
+  ggtitle("Recorded Caribou Events (multiple years missing)") + 
+  xlab("Date") + 
+  ylab("Sightings per day") + 
+  facet_wrap(~year,scales = "free_x") + 
+  theme_minimal() + 
+    scale_x_date(date_labels = "%b", # month abbreviations
+               date_breaks = "2 month", #tick for every month
+               date_minor_breaks = "2 month")  
+
+print(g)
+```
+
+
+

@@ -1,0 +1,176 @@
+---
+title: "Week 5 - Exploration"
+author: "Chris Healey"
+output:
+  html_document:
+    toc: true
+    theme: united
+---
+
+# Introduction
+
+## Objectives
+- Work a little more closely with qualitative methods (graphing)
+- 1D plots (histograms and barplots)
+- 2D plots (scatterplots, boxplots with categorical groupings, violin plots, heatmaps)
+- Multidimensional plots
+
+# Loading the data
+```{r}
+library(tidyverse)
+library(stringr)
+df = read_csv("data/MERGED2019_20_PP.csv", na=c("","na","NULL", "NA", "N/A", "null"))
+```
+
+# One dimensional plots
+
+## Histograms
+Always check to make sure the x-axis is continuous!
+```{r}
+g <- ggplot(data=df) + geom_histogram(aes(x = ADM_RATE), bins=30)
+print(g)
+```
+
+
+## Barplots (geom_bar and geom_col)
+
+`geom_bar` always provides counts
+```{r}
+new_england_states = c("VT", "ME", "MA", "CT", "RI")
+g <- ggplot(data=df %>% filter(STABBR %in% new_england_states) ) + geom_bar(aes(x = STABBR))
+print(g)
+```
+If you have already summarized the data, `geom_col` can show those values.
+```{r}
+summary <- df %>% group_by(STABBR) %>% summarize(college_count = n())
+g <- ggplot(data = summary %>% filter(STABBR %in% new_england_states)) + geom_col(aes(x=STABBR, y=college_count))
+print(g)
+
+```
+
+```{r}
+summary <- df %>% group_by(STABBR) %>% summarize(college_count = n())
+g <- ggplot(data = summary %>% filter(STABBR %in% new_england_states)) + 
+  geom_col(aes(x=STABBR, y=college_count)) +
+  geom_text(aes(x=STABBR, y=college_count, label=college_count), nudge_y = 5)
+print(g)
+```
+
+# Two dimensional plots
+
+## Scatterplots
+Scatterplots require two numeric columns.
+```{r}
+library(plotly)
+library(ggplot2)
+df_small <- df %>% 
+  filter(STABBR %in% new_england_states) %>% 
+  select(ADM_RATE,AVGFACSAL,STABBR,INSTNM) 
+
+g<-ggplot(data=df_small) +
+  geom_point(aes(x=ADM_RATE,y=AVGFACSAL,text=INSTNM, color = STABBR)) + 
+  xlab("Admission Rate") +
+  ylab("Avg. Faculty Salary per Month ($)") +
+  ggtitle("Faculty Salary vs Admission Rate at New England Colleges")
+print(g)
+ggplotly(g, tooltip = c("INSTNM","STABBR"))
+```
+
+## Boxplots
+Boxplots include one categorical and one continuous variable.
+
+```{r}
+df_small <- df %>% 
+  filter(STABBR %in% new_england_states)
+
+g<-ggplot(data=df_small) +
+  geom_boxplot(aes(x=STABBR,y=AVGFACSAL))
+print(g)
+```
+We can also overlay points...
+```{r}
+df_small <- df %>% 
+  filter(STABBR %in% new_england_states)
+
+g<-ggplot(data=df_small) +
+  geom_boxplot(aes(x=STABBR,y=AVGFACSAL)) +
+  geom_point(aes(x=STABBR,y=AVGFACSAL))
+print(g)
+```
+Or play with the points using `geom_jitter`
+```{r}
+df_small <- df %>% 
+  filter(STABBR %in% new_england_states)
+
+g<-ggplot(data=df_small) +
+  geom_boxplot(aes(x=STABBR,y=AVGFACSAL)) +
+  geom_jitter(aes(x=STABBR,y=AVGFACSAL), width = 0.2)
+print(g)
+```
+
+## Violin plots
+An alternative to jitter or box plots, is a violin plot (showing the histogram or density).
+
+```{r}
+df_small <- df %>% 
+  filter(STABBR %in% new_england_states)
+
+g<-ggplot(data=df_small) +
+  geom_violin(aes(x=STABBR,y=AVGFACSAL))
+print(g)
+```
+## Overlay Density
+```{r}
+df_small <- df %>% 
+  filter(STABBR %in% new_england_states)
+
+g<-ggplot(data=df_small) +
+  geom_density(aes(x=AVGFACSAL, fill=STABBR, alpha=0.3))
+print(g)
+
+```
+
+
+
+## Heat maps
+Heat maps can be used to compare two categorical variables.
+```{r}
+df_small <- df %>% 
+  filter(STABBR %in% new_england_states) %>%
+  mutate(RELAFFIL = case_when(RELAFFIL == 30 ~ "Catholic",
+                              RELAFFIL == 27 ~ "Assemblies of God",
+                              RELAFFIL == 42 ~ "Interdenominational",
+                              RELAFFIL == 54 ~ "Baptist",
+                              RELAFFIL == 59 ~ "Nazarene",
+                              RELAFFIL == 91 ~ "Greek Orthodox",
+                             is.na(RELAFFIL) ~ "None"))
+
+summary <- df_small %>% group_by(STABBR, RELAFFIL) %>% summarize(count = n())
+
+# Color Brewer palette
+g <- ggplot(summary) + 
+  geom_tile(aes(x=STABBR, y=as.factor(RELAFFIL), fill = count, label = count)) +
+  geom_text(aes(x=STABBR, y=as.factor(RELAFFIL), label = count),color='white') +
+  ylab("Affiliation") +
+  xlab("State") + 
+  ggtitle("Religious Affiliation of Colleges in New England States") +
+  theme(legend.position = "none")
+print(g)
+ggplotly(g)
+```
+
+
+
+# Multi-dimensional analysis
+
+## Correlation plots
+```{r}
+library(ggcorrplot)
+sats = df%>% select(contains("SAT"))
+not_all_na <- function(x){!all(is.na(x))}
+sats <- sats %>% select_if(not_all_na)
+
+# careful... each of the columns you select must be numeric (no $, etc.)
+ggcorrplot::ggcorrplot(cor(sats,use="complete.obs"),
+           lab = TRUE)
+```

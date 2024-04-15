@@ -1,0 +1,227 @@
+---
+title: "Due Diligence Project"
+author: "Joseph Annand"
+date: "2024-04-14"
+output:
+  word_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Libraries
+
+
+```{r libraries}
+library(tidyverse)
+library(caret)
+```
+
+
+```{r}
+library(writexl)
+```
+
+
+## Import Data
+
+
+```{r import data}
+data <- read.csv("data/Customer_Dataset_Data.csv")
+data <- data %>% column_to_rownames(., var = "CustomerID")
+
+```
+
+
+```{r}
+# Drop irrelevant columns
+
+data <- data[, -c(7,18,19,20,21,23,24,25,26,27,28,29,30,31,32)]
+```
+
+
+Columns 1-5 are demographic-related variables. Columns 6-9 are occupation-related variables. Columns 10-13 and 15 are personal-finance-related variables. Column 14 is blank. Columns 16-22 are household-related variables. Columns 23-27 are car-related variables. Columns 28 and 29 are political variables. Columns 30-33 are credit-card-related variables. Columns 35-37, 39, 40, 43, 44, and 54 are quantitative service history  variables. Columns 38, 41, 42, 45-53, and 55-59 are telecommunication-service-related variables.
+
+## Recode 4 features: Convert monetary columns from character to numeric
+
+
+```{r}
+data$VoiceOverTenure <- parse_number(data$VoiceOverTenure)
+data$VoiceLastMonth <- parse_number(data$VoiceLastMonth)
+
+data$EquipmentOverTenure <- parse_number(data$EquipmentOverTenure)
+data$EquipmentLastMonth <- parse_number(data$EquipmentLastMonth)
+
+data$DataOverTenure <- parse_number(data$DataOverTenure)
+data$DataLastMonth <- parse_number(data$DataLastMonth)
+```
+
+
+```{r}
+data$VoiceOverTenure[is.na(data$VoiceOverTenure)] <- 0
+data$VoiceLastMonth[is.na(data$VoiceLastMonth)] <- 0
+
+data$EquipmentOverTenure[is.na(data$EquipmentOverTenure)] <- 0
+data$EquipmentLastMonth[is.na(data$EquipmentLastMonth)] <- 0
+
+data$DataOverTenure[is.na(data$DataOverTenure)] <- 0
+data$DataLastMonth[is.na(data$DataLastMonth)] <- 0
+```
+
+
+VoiceOverTenure, VoiceOverLastMonth, EquipmentOverTenure, EquipmentLastMonth, DataOverTenure, and DataLastMonth, HHIncome were all initially coded as character vectors with commas and dollar signs. All values in these columns were parsed for numbers and converted to numeric data type. NA values were converted to zero, so that the derived features could be calculated.
+
+
+## Recode HHIncome feature
+
+
+```{r}
+data$HHIncome <- parse_number(data$HHIncome)
+```
+
+
+
+## Derived Feature 1: TotalOverTenure
+
+
+```{r}
+data$TotalOverTenure <- data$VoiceOverTenure + data$EquipmentOverTenure + data$DataOverTenure
+```
+
+
+Determining a new feature that is the sum of the total amounts they have spent on phone, equipment, and data services over their tenure with the phone company allows for tracking of the most lucrative customers and find which variables are most related to how much customers spend in telecommunication services.
+
+
+## Derived Feature 2: TotalByTenure
+
+
+```{r}
+data$TotalByTenure <- data$TotalOverTenure / data$PhoneCoTenure
+```
+
+
+Expanding on the TotalOverTenure feature, the TotalByTenure feature calculates the average amount a customer spends on services per year with the phone company. With this, customers across the range of tenure with the phone company can be compared.
+
+
+## Derived Feature 3: TotalLastMonth
+
+
+```{r}
+data$TotalLastMonth <- data$VoiceLastMonth + data$EquipmentLastMonth + data$DataLastMonth
+```
+
+
+TotalLastMonth feature sums the amounts each customer paid in services in the past month. This data gives the most updated look at the total revenue each customer brings in.
+
+
+## Breakdown of Customers by Region
+
+
+```{r region}
+d <- ggplot(data = data, aes(Region)) +
+  geom_bar() +
+  labs(x="Region", y="Number of Customers",
+       title = "Number of Customers by Region")
+d
+```
+
+
+The data from the Region feature was visualized using a bar chart to see the distribution of customers across the five regions. Customers are evenly distributed across the five regions.
+
+
+## Relationship Between Income and Total Last Month
+
+
+```{r}
+a <- ggplot(data = data, aes(HHIncome, TotalLastMonth)) +
+  geom_point() +
+  labs(x="Household Income", y= "Total Last Month Payments",
+       title = "Income and Total Last Month Payments")
+a
+```
+
+
+## Normalize HHIncome
+
+
+```{r}
+c <- ggplot(data = data, aes(HHIncome)) +
+  geom_histogram() +
+  labs(x="Household Income", y= "Frequency",
+       title = "Distribution of Household Income")
+c
+```
+
+
+```{r}
+process <- preProcess(as.data.frame(data$HHIncome), method = c("range"))
+
+normIncome <- predict(process, as.data.frame(data$HHIncome))
+
+data$IncomeScaled <- normIncome$`data$HHIncome`
+```
+
+
+```{r}
+f <- ggplot(data = data, aes(IncomeScaled)) +
+  geom_histogram()
+f
+```
+
+
+## Normalize TotalLastMonth
+
+
+```{r}
+e <- ggplot(data = data, aes(TotalLastMonth)) +
+  geom_histogram() +
+  labs(x="Total Last Month Payments", y= "Frequency",
+       title = "Distribution of Total Last Month Payments")
+e
+```
+
+```{r}
+process <- preProcess(as.data.frame(data$TotalLastMonth), method = c("range"))
+
+normTLS<- predict(process, as.data.frame(data$TotalLastMonth))
+
+data$TotalLastMonthScaled <- normTLS$`data$TotalLastMonth`
+```
+
+
+```{r}
+g = ggplot(data = data, aes(TotalLastMonthScaled)) +
+  geom_histogram()
+g
+```
+
+
+## Relationship Between Income and Total Last Month Normalized
+
+
+```{r}
+h <- ggplot(data = data, aes(IncomeScaled, TotalLastMonthScaled)) +
+  geom_point() + 
+  labs(x="Household Income", y= "Total Last Month Payments",
+       title = "Income and Total Last Month Scaled")
+h
+```
+
+
+## Relationship between TV Watching Hours and Age
+
+
+```{r}
+b <- ggplot(data = data, aes(Age, TVWatchingHours)) +
+  geom_point() +
+  labs(x="Age", y= "TV Watching Hours",
+       title = "Relationship Between Age and TV Watching Hours")
+b
+```
+
+
+TV Watching Hours is plotted as a function of Age. There is no apparent correlation between the two variables.
+

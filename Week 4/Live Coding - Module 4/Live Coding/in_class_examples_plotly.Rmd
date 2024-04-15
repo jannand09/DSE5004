@@ -1,0 +1,45 @@
+---
+title: "Plotly Example"
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r include=FALSE}
+library(tidyverse)
+library(ggplot2)
+library(plotly)
+
+capacity <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-05-03/capacity.csv')
+```
+
+```{r echo=FALSE}
+g <- 
+  #Data
+  ggplot(data=capacity %>% filter(type %in% c("Solar","Wind","Storage"))) + 
+  
+  # Graph and Aesthetics
+  geom_line(aes(x=year,y=total_gw,color=type),size=1.5) +
+  
+  # Labels 
+  ylab("Total Gigawatts") + # Y-axis label
+  xlab("Year") + # X-axis label
+  labs(color = "Energy Type") + # Legend label (if necessary)
+  
+  # Scales and limits
+  scale_x_continuous(breaks = seq(2014,2020, by=1)) + # X axis 
+  scale_y_continuous(limits = c(0,500)) + # Y axis
+  
+  # Theme
+  theme_minimal()+
+  theme(plot.title=element_text(size = 16, face = "bold"), #Title Font and Size
+        axis.text=element_text(size=12), #Axis Label Font and Size
+        axis.title=element_text(size=14,face="bold"))+ #Axis Title Font and Size
+  
+  # Title
+  ggtitle("Growth of Renewable Energy Sources") 
+  
+ggplotly(g)
+```
+
+

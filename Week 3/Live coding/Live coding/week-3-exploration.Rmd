@@ -1,0 +1,121 @@
+---
+title: "Week 3 - Working with Datasets"
+author: "Chris Healey"
+output:
+  html_document:
+    toc: true
+    theme: united
+---
+
+The main objectives we will cover will be: 
+
+- creating a summary of all columns
+- using skimr
+    
+# Import Data
+2022 Axios-Harris Poll
+Source: (https://github.com/rfordatascience/tidytuesday/tree/master/data/2022/2022-05-31)
+
+## Import each file
+
+```{r}
+library(tidyverse)
+poll <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-05-31/poll.csv')
+reputation <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-05-31/reputation.csv')
+```
+
+
+```{r}
+#combine data for just 2022
+rep <- reputation %>% select(!rank) %>% pivot_wider(names_from = "name", values_from = "score")
+poll_22 <- poll %>% select(company, industry, `2022_rank`,`2022_rq`)
+poll_22 <- distinct(poll_22)
+
+df <- rep %>% inner_join(poll_22, by = c("company", "industry"))
+```
+
+Note: if you want `summary` or `skim` to perform counts on a column, convert it to a factor first!
+```{r}
+df$industry <- as.factor(df$industry) 
+```
+
+
+# Create summaries of data
+
+## `summary`
+`summary` returns a table of summary statistics.  This might be sufficient for your uses, but I find it to be a little bit clunky when looking at more than five to ten variables.  For example, here's some results from our dataset.
+```{r}
+df_summary = summary(df)
+print(df_summary)
+
+```
+```{r}
+library(psych)
+describe(df)
+```
+
+This is a little unwieldy.
+
+## `skimr`
+A little bit nicer item is the `skimr` package.  See this piece of information: https://cran.r-project.org/web/packages/skimr/vignettes/skimr.html
+```{r}
+library(skimr)
+df_skim <- skim(df)
+ # if you want skimr to analyze categorical variables
+```
+
+### Inspecting results by type
+The storage of results in a data frame allows you to do interesting things, like subset columns by type (see examples below).
+
+```{r}
+df %>% skim()
+```
+
+```{r}
+skim(df)
+```
+
+
+```{r}
+summary_numeric <- df %>%
+  skim() %>%
+  yank("numeric")
+
+print(summary_numeric)
+
+print(summary_numeric %>% arrange(desc(complete_rate)))
+```
+
+
+
+```{r}
+df %>%
+  skim() %>%
+  yank("character")
+```
+
+
+```{r}
+df %>%
+  skim() %>%
+  yank("logical")
+```
+
+### Creating your own metrics
+
+Adding a metric..
+```{r}
+library(psych)
+my_skim <- skim_with(numeric = sfl("skew"=skew))
+df %>% my_skim %>% yank("numeric")
+```
+Creating your own custom list of metrics...
+```{r}
+library(psych)
+my_skim <- skim_with(numeric = sfl("minimum" = ~ stats::quantile(.,probs = .0, na.rm = TRUE, names = FALSE, type = 1),
+                                   "maximum" = ~ stats::quantile(.,probs = 1.0, na.rm = TRUE, names = FALSE, type = 1)),append=FALSE)
+summary <- df %>% my_skim
+print(summary)
+```
+
+

@@ -1,0 +1,68 @@
+---
+title: "Case Study Demonstration"
+output: html_notebook
+---
+
+
+```{r} 
+library(tidyverse)
+library(ggplot2)
+library(lubridate)
+
+# import data
+df <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-08-13/emperors.csv")
+
+# correct for BC dates
+bc_born = c("Augustus","Tiberius", "Claudius", "Galba")
+bc_reign_start = c("Augustus")
+
+# Create features for life, reign, and age at rise to power
+df <- df %>% mutate(life_length = ifelse(name %in% bc_born,
+                                         -interval(birth,as.Date("0000-01-01"))/years(1)+interval(as.Date("0000-01-01"),death)/years(1),
+                                         interval(birth,death)/years(1)),
+                    reign_length = ifelse(name %in% bc_reign_start,
+                                         -interval(reign_start,as.Date("0000-01-01"))/years(1)+interval(as.Date("0000-01-01"),reign_end)/years(1),
+                                         interval(reign_start,reign_end)/years(1)),
+                    age_at_rise = ifelse(name %in% bc_reign_start, interval(reign_start,birth)/years(1),
+                                         ifelse(name %in% bc_born,
+                                                -interval(birth,as.Date("0000-01-01"))/years(1)+interval(as.Date("0000-01-01"),reign_start)/years(1),
+                                                interval(birth,reign_start)/years(1))))
+# Exclude rows where dates are unknown
+df <- df %>% drop_na(life_length, reign_length)
+```
+```{r}
+df %>% group_by(rise) %>% summarize(avg_reign = mean(reign_length), avg_age = mean(life_length), count = n()) %>% arrange(desc(count))
+```
+```{r}
+df <- df %>% filter(rise %in% c("Birthright", "Seized Power", "Appointment by Army", "Appointment by Senate"))
+g <- ggplot(df) + geom_point(aes(x=reign_length, y=life_length, color = rise))
+print(g)
+```
+
+
+
+```{r}
+library(ggalt)
+library(ggforce)
+# see https://luisdva.github.io/rstats/Grouping-points/ 
+```
+
+```{r}
+g <- ggplot(df, aes(x=reign_length, y=life_length)) +
+  geom_point(aes(color = rise)) +
+  geom_mark_hull(concavity = 5,expand=0.01,radius=0.01, aes(fill=rise))+theme_minimal()
+print(g)
+```
+
+
+```{r}
+g <- ggplot(df, aes(x=reign_length, y=life_length)) +
+  #geom_point(aes(color = rise)) +
+  geom_mark_hull(concavity = 5,expand=0.01,radius=0.01, aes(fill=rise))+theme_minimal()
+print(g)
+```
+
+
+```{r}
+df %>% group_by(dynasty) %>% summarize(avg_reign = mean(reign_length), avg_age = mean(life_length), count = n()) %>% arrange(desc(count))
+```

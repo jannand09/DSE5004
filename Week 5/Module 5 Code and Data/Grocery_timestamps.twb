@@ -1,0 +1,2568 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20241.24.0308.0326                               -->
+<workbook original-version='18.1' source-build='2024.1.1 (20241.24.0308.0326)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource caption='grocery_timestamp' inline='true' name='federated.0wfxm061ehri9z18sk17y1i02fuq' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='grocery_timestamp' name='textscan.1n3cbg702zmg8h1fjf0vd0qvfoet'>
+            <connection class='textscan' directory='C:/Merrimack/Visual Data Exploration/Module 5/data' filename='grocery_timestamp.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.1n3cbg702zmg8h1fjf0vd0qvfoet' name='grocery_timestamp.csv' table='[grocery_timestamp#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=';'>
+            <column datatype='integer' name='order_id' ordinal='0' />
+            <column datatype='integer' name='pay_method' ordinal='1' />
+            <column datatype='integer' name='order_hour_of_day' ordinal='2' />
+            <column datatype='datetime' name='arrival_ timestamp' ordinal='3' />
+            <column datatype='datetime' name='pickup_timestamp' ordinal='4' />
+            <column datatype='datetime' name='start_service_time' ordinal='5' />
+            <column datatype='datetime' name='finish_service_time' ordinal='6' />
+            <column datatype='integer' name='days_since_prior_order' ordinal='7' />
+            <column datatype='integer' name='air fresheners candles' ordinal='8' />
+            <column datatype='integer' name='asian foods' ordinal='9' />
+            <column datatype='integer' name='baby accessories' ordinal='10' />
+            <column datatype='integer' name='baby bath body care' ordinal='11' />
+            <column datatype='integer' name='baby food formula' ordinal='12' />
+            <column datatype='integer' name='bakery desserts' ordinal='13' />
+            <column datatype='integer' name='baking ingredients' ordinal='14' />
+            <column datatype='integer' name='baking supplies decor' ordinal='15' />
+            <column datatype='integer' name='beauty' ordinal='16' />
+            <column datatype='integer' name='beers coolers' ordinal='17' />
+            <column datatype='integer' name='body lotions soap' ordinal='18' />
+            <column datatype='integer' name='bread' ordinal='19' />
+            <column datatype='integer' name='breakfast bakery' ordinal='20' />
+            <column datatype='integer' name='breakfast bars pastries' ordinal='21' />
+            <column datatype='integer' name='bulk dried fruits vegetables' ordinal='22' />
+            <column datatype='integer' name='bulk grains rice dried goods' ordinal='23' />
+            <column datatype='integer' name='buns rolls' ordinal='24' />
+            <column datatype='integer' name='butter' ordinal='25' />
+            <column datatype='integer' name='candy chocolate' ordinal='26' />
+            <column datatype='integer' name='canned fruit applesauce' ordinal='27' />
+            <column datatype='integer' name='canned jarred vegetables' ordinal='28' />
+            <column datatype='integer' name='canned meals beans' ordinal='29' />
+            <column datatype='integer' name='canned meat seafood' ordinal='30' />
+            <column datatype='integer' name='cat food care' ordinal='31' />
+            <column datatype='integer' name='cereal' ordinal='32' />
+            <column datatype='integer' name='chips pretzels' ordinal='33' />
+            <column datatype='integer' name='cleaning products' ordinal='34' />
+            <column datatype='integer' name='cocoa drink mixes' ordinal='35' />
+            <column datatype='integer' name='coffee' ordinal='36' />
+            <column datatype='integer' name='cold flu allergy' ordinal='37' />
+            <column datatype='integer' name='condiments' ordinal='38' />
+            <column datatype='integer' name='cookies cakes' ordinal='39' />
+            <column datatype='integer' name='crackers' ordinal='40' />
+            <column datatype='integer' name='cream' ordinal='41' />
+            <column datatype='integer' name='deodorants' ordinal='42' />
+            <column datatype='integer' name='diapers wipes' ordinal='43' />
+            <column datatype='integer' name='digestion' ordinal='44' />
+            <column datatype='integer' name='dish detergents' ordinal='45' />
+            <column datatype='integer' name='dog food care' ordinal='46' />
+            <column datatype='integer' name='doughs gelatins bake mixes' ordinal='47' />
+            <column datatype='integer' name='dry pasta' ordinal='48' />
+            <column datatype='integer' name='eggs' ordinal='49' />
+            <column datatype='integer' name='energy granola bars' ordinal='50' />
+            <column datatype='integer' name='energy sports drinks' ordinal='51' />
+            <column datatype='integer' name='eye ear care' ordinal='52' />
+            <column datatype='integer' name='facial care' ordinal='53' />
+            <column datatype='integer' name='feminine care' ordinal='54' />
+            <column datatype='integer' name='first aid' ordinal='55' />
+            <column datatype='integer' name='food storage' ordinal='56' />
+            <column datatype='integer' name='fresh dips tapenades' ordinal='57' />
+            <column datatype='integer' name='fresh fruits' ordinal='58' />
+            <column datatype='integer' name='fresh herbs' ordinal='59' />
+            <column datatype='integer' name='fresh pasta' ordinal='60' />
+            <column datatype='integer' name='fresh vegetables' ordinal='61' />
+            <column datatype='integer' name='frozen appetizers sides' ordinal='62' />
+            <column datatype='integer' name='frozen breads doughs' ordinal='63' />
+            <column datatype='integer' name='frozen breakfast' ordinal='64' />
+            <column datatype='integer' name='frozen dessert' ordinal='65' />
+            <column datatype='integer' name='frozen juice' ordinal='66' />
+            <column datatype='integer' name='frozen meals' ordinal='67' />
+            <column datatype='integer' name='frozen meat seafood' ordinal='68' />
+            <column datatype='integer' name='frozen pizza' ordinal='69' />
+            <column datatype='integer' name='frozen produce' ordinal='70' />
+            <column datatype='integer' name='frozen vegan vegetarian' ordinal='71' />
+            <column datatype='integer' name='fruit vegetable snacks' ordinal='72' />
+            <column datatype='integer' name='grains rice dried goods' ordinal='73' />
+            <column datatype='integer' name='granola' ordinal='74' />
+            <column datatype='integer' name='hair care' ordinal='75' />
+            <column datatype='integer' name='honeys syrups nectars' ordinal='76' />
+            <column datatype='integer' name='hot cereal pancake mixes' ordinal='77' />
+            <column datatype='integer' name='hot dogs bacon sausage' ordinal='78' />
+            <column datatype='integer' name='ice cream ice' ordinal='79' />
+            <column datatype='integer' name='ice cream toppings' ordinal='80' />
+            <column datatype='integer' name='indian foods' ordinal='81' />
+            <column datatype='integer' name='instant foods' ordinal='82' />
+            <column datatype='integer' name='juice nectars' ordinal='83' />
+            <column datatype='integer' name='kitchen supplies' ordinal='84' />
+            <column datatype='integer' name='kosher foods' ordinal='85' />
+            <column datatype='integer' name='latino foods' ordinal='86' />
+            <column datatype='integer' name='laundry' ordinal='87' />
+            <column datatype='integer' name='lunch meat' ordinal='88' />
+            <column datatype='integer' name='marinades meat preparation' ordinal='89' />
+            <column datatype='integer' name='meat counter' ordinal='90' />
+            <column datatype='integer' name='milk' ordinal='91' />
+            <column datatype='integer' name='mint gum' ordinal='92' />
+            <column datatype='integer' name='missing' ordinal='93' />
+            <column datatype='integer' name='more household' ordinal='94' />
+            <column datatype='integer' name='muscles joints pain relief' ordinal='95' />
+            <column datatype='integer' name='nuts seeds dried fruit' ordinal='96' />
+            <column datatype='integer' name='oils vinegars' ordinal='97' />
+            <column datatype='integer' name='oral hygiene' ordinal='98' />
+            <column datatype='integer' name='other' ordinal='99' />
+            <column datatype='integer' name='other creams cheeses' ordinal='100' />
+            <column datatype='integer' name='packaged cheese' ordinal='101' />
+            <column datatype='integer' name='packaged meat' ordinal='102' />
+            <column datatype='integer' name='packaged poultry' ordinal='103' />
+            <column datatype='integer' name='packaged produce' ordinal='104' />
+            <column datatype='integer' name='packaged seafood' ordinal='105' />
+            <column datatype='integer' name='packaged vegetables fruits' ordinal='106' />
+            <column datatype='integer' name='paper goods' ordinal='107' />
+            <column datatype='integer' name='pasta sauce' ordinal='108' />
+            <column datatype='integer' name='pickled goods olives' ordinal='109' />
+            <column datatype='integer' name='plates bowls cups flatware' ordinal='110' />
+            <column datatype='integer' name='popcorn jerky' ordinal='111' />
+            <column datatype='integer' name='poultry counter' ordinal='112' />
+            <column datatype='integer' name='prepared meals' ordinal='113' />
+            <column datatype='integer' name='prepared soups salads' ordinal='114' />
+            <column datatype='integer' name='preserved dips spreads' ordinal='115' />
+            <column datatype='integer' name='protein meal replacements' ordinal='116' />
+            <column datatype='integer' name='red wines' ordinal='117' />
+            <column datatype='integer' name='refrigerated' ordinal='118' />
+            <column datatype='integer' name='refrigerated pudding desserts' ordinal='119' />
+            <column datatype='integer' name='salad dressing toppings' ordinal='120' />
+            <column datatype='integer' name='seafood counter' ordinal='121' />
+            <column datatype='integer' name='shave needs' ordinal='122' />
+            <column datatype='integer' name='skin care' ordinal='123' />
+            <column datatype='integer' name='soap' ordinal='124' />
+            <column datatype='integer' name='soft drinks' ordinal='125' />
+            <column datatype='integer' name='soup broth bouillon' ordinal='126' />
+            <column datatype='integer' name='soy lactosefree' ordinal='127' />
+            <column datatype='integer' name='specialty cheeses' ordinal='128' />
+            <column datatype='integer' name='specialty wines champagnes' ordinal='129' />
+            <column datatype='integer' name='spices seasonings' ordinal='130' />
+            <column datatype='integer' name='spirits' ordinal='131' />
+            <column datatype='integer' name='spreads' ordinal='132' />
+            <column datatype='integer' name='tea' ordinal='133' />
+            <column datatype='integer' name='tofu meat alternatives' ordinal='134' />
+            <column datatype='integer' name='tortillas flat bread' ordinal='135' />
+            <column datatype='integer' name='trail mix snack mix' ordinal='136' />
+            <column datatype='integer' name='trash bags liners' ordinal='137' />
+            <column datatype='integer' name='vitamins supplements' ordinal='138' />
+            <column datatype='integer' name='water seltzer sparkling water' ordinal='139' />
+            <column datatype='integer' name='white wines' ordinal='140' />
+            <column datatype='integer' name='yogurt' ordinal='141' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='textscan.1n3cbg702zmg8h1fjf0vd0qvfoet' name='grocery_timestamp.csv' table='[grocery_timestamp#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=';'>
+            <column datatype='integer' name='order_id' ordinal='0' />
+            <column datatype='integer' name='pay_method' ordinal='1' />
+            <column datatype='integer' name='order_hour_of_day' ordinal='2' />
+            <column datatype='datetime' name='arrival_ timestamp' ordinal='3' />
+            <column datatype='datetime' name='pickup_timestamp' ordinal='4' />
+            <column datatype='datetime' name='start_service_time' ordinal='5' />
+            <column datatype='datetime' name='finish_service_time' ordinal='6' />
+            <column datatype='integer' name='days_since_prior_order' ordinal='7' />
+            <column datatype='integer' name='air fresheners candles' ordinal='8' />
+            <column datatype='integer' name='asian foods' ordinal='9' />
+            <column datatype='integer' name='baby accessories' ordinal='10' />
+            <column datatype='integer' name='baby bath body care' ordinal='11' />
+            <column datatype='integer' name='baby food formula' ordinal='12' />
+            <column datatype='integer' name='bakery desserts' ordinal='13' />
+            <column datatype='integer' name='baking ingredients' ordinal='14' />
+            <column datatype='integer' name='baking supplies decor' ordinal='15' />
+            <column datatype='integer' name='beauty' ordinal='16' />
+            <column datatype='integer' name='beers coolers' ordinal='17' />
+            <column datatype='integer' name='body lotions soap' ordinal='18' />
+            <column datatype='integer' name='bread' ordinal='19' />
+            <column datatype='integer' name='breakfast bakery' ordinal='20' />
+            <column datatype='integer' name='breakfast bars pastries' ordinal='21' />
+            <column datatype='integer' name='bulk dried fruits vegetables' ordinal='22' />
+            <column datatype='integer' name='bulk grains rice dried goods' ordinal='23' />
+            <column datatype='integer' name='buns rolls' ordinal='24' />
+            <column datatype='integer' name='butter' ordinal='25' />
+            <column datatype='integer' name='candy chocolate' ordinal='26' />
+            <column datatype='integer' name='canned fruit applesauce' ordinal='27' />
+            <column datatype='integer' name='canned jarred vegetables' ordinal='28' />
+            <column datatype='integer' name='canned meals beans' ordinal='29' />
+            <column datatype='integer' name='canned meat seafood' ordinal='30' />
+            <column datatype='integer' name='cat food care' ordinal='31' />
+            <column datatype='integer' name='cereal' ordinal='32' />
+            <column datatype='integer' name='chips pretzels' ordinal='33' />
+            <column datatype='integer' name='cleaning products' ordinal='34' />
+            <column datatype='integer' name='cocoa drink mixes' ordinal='35' />
+            <column datatype='integer' name='coffee' ordinal='36' />
+            <column datatype='integer' name='cold flu allergy' ordinal='37' />
+            <column datatype='integer' name='condiments' ordinal='38' />
+            <column datatype='integer' name='cookies cakes' ordinal='39' />
+            <column datatype='integer' name='crackers' ordinal='40' />
+            <column datatype='integer' name='cream' ordinal='41' />
+            <column datatype='integer' name='deodorants' ordinal='42' />
+            <column datatype='integer' name='diapers wipes' ordinal='43' />
+            <column datatype='integer' name='digestion' ordinal='44' />
+            <column datatype='integer' name='dish detergents' ordinal='45' />
+            <column datatype='integer' name='dog food care' ordinal='46' />
+            <column datatype='integer' name='doughs gelatins bake mixes' ordinal='47' />
+            <column datatype='integer' name='dry pasta' ordinal='48' />
+            <column datatype='integer' name='eggs' ordinal='49' />
+            <column datatype='integer' name='energy granola bars' ordinal='50' />
+            <column datatype='integer' name='energy sports drinks' ordinal='51' />
+            <column datatype='integer' name='eye ear care' ordinal='52' />
+            <column datatype='integer' name='facial care' ordinal='53' />
+            <column datatype='integer' name='feminine care' ordinal='54' />
+            <column datatype='integer' name='first aid' ordinal='55' />
+            <column datatype='integer' name='food storage' ordinal='56' />
+            <column datatype='integer' name='fresh dips tapenades' ordinal='57' />
+            <column datatype='integer' name='fresh fruits' ordinal='58' />
+            <column datatype='integer' name='fresh herbs' ordinal='59' />
+            <column datatype='integer' name='fresh pasta' ordinal='60' />
+            <column datatype='integer' name='fresh vegetables' ordinal='61' />
+            <column datatype='integer' name='frozen appetizers sides' ordinal='62' />
+            <column datatype='integer' name='frozen breads doughs' ordinal='63' />
+            <column datatype='integer' name='frozen breakfast' ordinal='64' />
+            <column datatype='integer' name='frozen dessert' ordinal='65' />
+            <column datatype='integer' name='frozen juice' ordinal='66' />
+            <column datatype='integer' name='frozen meals' ordinal='67' />
+            <column datatype='integer' name='frozen meat seafood' ordinal='68' />
+            <column datatype='integer' name='frozen pizza' ordinal='69' />
+            <column datatype='integer' name='frozen produce' ordinal='70' />
+            <column datatype='integer' name='frozen vegan vegetarian' ordinal='71' />
+            <column datatype='integer' name='fruit vegetable snacks' ordinal='72' />
+            <column datatype='integer' name='grains rice dried goods' ordinal='73' />
+            <column datatype='integer' name='granola' ordinal='74' />
+            <column datatype='integer' name='hair care' ordinal='75' />
+            <column datatype='integer' name='honeys syrups nectars' ordinal='76' />
+            <column datatype='integer' name='hot cereal pancake mixes' ordinal='77' />
+            <column datatype='integer' name='hot dogs bacon sausage' ordinal='78' />
+            <column datatype='integer' name='ice cream ice' ordinal='79' />
+            <column datatype='integer' name='ice cream toppings' ordinal='80' />
+            <column datatype='integer' name='indian foods' ordinal='81' />
+            <column datatype='integer' name='instant foods' ordinal='82' />
+            <column datatype='integer' name='juice nectars' ordinal='83' />
+            <column datatype='integer' name='kitchen supplies' ordinal='84' />
+            <column datatype='integer' name='kosher foods' ordinal='85' />
+            <column datatype='integer' name='latino foods' ordinal='86' />
+            <column datatype='integer' name='laundry' ordinal='87' />
+            <column datatype='integer' name='lunch meat' ordinal='88' />
+            <column datatype='integer' name='marinades meat preparation' ordinal='89' />
+            <column datatype='integer' name='meat counter' ordinal='90' />
+            <column datatype='integer' name='milk' ordinal='91' />
+            <column datatype='integer' name='mint gum' ordinal='92' />
+            <column datatype='integer' name='missing' ordinal='93' />
+            <column datatype='integer' name='more household' ordinal='94' />
+            <column datatype='integer' name='muscles joints pain relief' ordinal='95' />
+            <column datatype='integer' name='nuts seeds dried fruit' ordinal='96' />
+            <column datatype='integer' name='oils vinegars' ordinal='97' />
+            <column datatype='integer' name='oral hygiene' ordinal='98' />
+            <column datatype='integer' name='other' ordinal='99' />
+            <column datatype='integer' name='other creams cheeses' ordinal='100' />
+            <column datatype='integer' name='packaged cheese' ordinal='101' />
+            <column datatype='integer' name='packaged meat' ordinal='102' />
+            <column datatype='integer' name='packaged poultry' ordinal='103' />
+            <column datatype='integer' name='packaged produce' ordinal='104' />
+            <column datatype='integer' name='packaged seafood' ordinal='105' />
+            <column datatype='integer' name='packaged vegetables fruits' ordinal='106' />
+            <column datatype='integer' name='paper goods' ordinal='107' />
+            <column datatype='integer' name='pasta sauce' ordinal='108' />
+            <column datatype='integer' name='pickled goods olives' ordinal='109' />
+            <column datatype='integer' name='plates bowls cups flatware' ordinal='110' />
+            <column datatype='integer' name='popcorn jerky' ordinal='111' />
+            <column datatype='integer' name='poultry counter' ordinal='112' />
+            <column datatype='integer' name='prepared meals' ordinal='113' />
+            <column datatype='integer' name='prepared soups salads' ordinal='114' />
+            <column datatype='integer' name='preserved dips spreads' ordinal='115' />
+            <column datatype='integer' name='protein meal replacements' ordinal='116' />
+            <column datatype='integer' name='red wines' ordinal='117' />
+            <column datatype='integer' name='refrigerated' ordinal='118' />
+            <column datatype='integer' name='refrigerated pudding desserts' ordinal='119' />
+            <column datatype='integer' name='salad dressing toppings' ordinal='120' />
+            <column datatype='integer' name='seafood counter' ordinal='121' />
+            <column datatype='integer' name='shave needs' ordinal='122' />
+            <column datatype='integer' name='skin care' ordinal='123' />
+            <column datatype='integer' name='soap' ordinal='124' />
+            <column datatype='integer' name='soft drinks' ordinal='125' />
+            <column datatype='integer' name='soup broth bouillon' ordinal='126' />
+            <column datatype='integer' name='soy lactosefree' ordinal='127' />
+            <column datatype='integer' name='specialty cheeses' ordinal='128' />
+            <column datatype='integer' name='specialty wines champagnes' ordinal='129' />
+            <column datatype='integer' name='spices seasonings' ordinal='130' />
+            <column datatype='integer' name='spirits' ordinal='131' />
+            <column datatype='integer' name='spreads' ordinal='132' />
+            <column datatype='integer' name='tea' ordinal='133' />
+            <column datatype='integer' name='tofu meat alternatives' ordinal='134' />
+            <column datatype='integer' name='tortillas flat bread' ordinal='135' />
+            <column datatype='integer' name='trail mix snack mix' ordinal='136' />
+            <column datatype='integer' name='trash bags liners' ordinal='137' />
+            <column datatype='integer' name='vitamins supplements' ordinal='138' />
+            <column datatype='integer' name='water seltzer sparkling water' ordinal='139' />
+            <column datatype='integer' name='white wines' ordinal='140' />
+            <column datatype='integer' name='yogurt' ordinal='141' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;;&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>order_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[order_id]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>order_id</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>pay_method</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[pay_method]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>pay_method</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>order_hour_of_day</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[order_hour_of_day]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>order_hour_of_day</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>arrival_ timestamp</remote-name>
+            <remote-type>134</remote-type>
+            <local-name>[arrival_ timestamp]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>arrival_ timestamp</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Hour</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>pickup_timestamp</remote-name>
+            <remote-type>134</remote-type>
+            <local-name>[pickup_timestamp]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>pickup_timestamp</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Hour</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>start_service_time</remote-name>
+            <remote-type>134</remote-type>
+            <local-name>[start_service_time]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>start_service_time</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Hour</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>finish_service_time</remote-name>
+            <remote-type>134</remote-type>
+            <local-name>[finish_service_time]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>finish_service_time</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Hour</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>days_since_prior_order</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[days_since_prior_order]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>days_since_prior_order</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>air fresheners candles</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[air fresheners candles]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>air fresheners candles</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>asian foods</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[asian foods]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>asian foods</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>baby accessories</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[baby accessories]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>baby accessories</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>baby bath body care</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[baby bath body care]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>baby bath body care</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>baby food formula</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[baby food formula]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>baby food formula</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>bakery desserts</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[bakery desserts]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>bakery desserts</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>baking ingredients</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[baking ingredients]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>baking ingredients</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>baking supplies decor</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[baking supplies decor]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>baking supplies decor</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>beauty</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[beauty]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>beauty</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>beers coolers</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[beers coolers]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>beers coolers</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>body lotions soap</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[body lotions soap]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>body lotions soap</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>bread</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[bread]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>bread</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>breakfast bakery</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[breakfast bakery]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>breakfast bakery</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>breakfast bars pastries</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[breakfast bars pastries]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>breakfast bars pastries</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>bulk dried fruits vegetables</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[bulk dried fruits vegetables]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>bulk dried fruits vegetables</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>bulk grains rice dried goods</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[bulk grains rice dried goods]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>bulk grains rice dried goods</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>buns rolls</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[buns rolls]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>buns rolls</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>butter</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[butter]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>butter</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>candy chocolate</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[candy chocolate]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>candy chocolate</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>canned fruit applesauce</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[canned fruit applesauce]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>canned fruit applesauce</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>canned jarred vegetables</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[canned jarred vegetables]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>canned jarred vegetables</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>canned meals beans</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[canned meals beans]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>canned meals beans</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>canned meat seafood</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[canned meat seafood]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>canned meat seafood</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>cat food care</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[cat food care]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>cat food care</remote-alias>
+            <ordinal>31</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>cereal</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[cereal]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>cereal</remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>chips pretzels</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[chips pretzels]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>chips pretzels</remote-alias>
+            <ordinal>33</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>cleaning products</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[cleaning products]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>cleaning products</remote-alias>
+            <ordinal>34</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>cocoa drink mixes</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[cocoa drink mixes]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>cocoa drink mixes</remote-alias>
+            <ordinal>35</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>coffee</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[coffee]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>coffee</remote-alias>
+            <ordinal>36</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>cold flu allergy</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[cold flu allergy]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>cold flu allergy</remote-alias>
+            <ordinal>37</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>condiments</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[condiments]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>condiments</remote-alias>
+            <ordinal>38</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>cookies cakes</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[cookies cakes]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>cookies cakes</remote-alias>
+            <ordinal>39</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>crackers</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[crackers]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>crackers</remote-alias>
+            <ordinal>40</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>cream</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[cream]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>cream</remote-alias>
+            <ordinal>41</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>deodorants</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[deodorants]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>deodorants</remote-alias>
+            <ordinal>42</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>diapers wipes</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[diapers wipes]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>diapers wipes</remote-alias>
+            <ordinal>43</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>digestion</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[digestion]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>digestion</remote-alias>
+            <ordinal>44</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>dish detergents</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[dish detergents]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>dish detergents</remote-alias>
+            <ordinal>45</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>dog food care</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[dog food care]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>dog food care</remote-alias>
+            <ordinal>46</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>doughs gelatins bake mixes</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[doughs gelatins bake mixes]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>doughs gelatins bake mixes</remote-alias>
+            <ordinal>47</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>dry pasta</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[dry pasta]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>dry pasta</remote-alias>
+            <ordinal>48</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>eggs</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[eggs]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>eggs</remote-alias>
+            <ordinal>49</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>energy granola bars</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[energy granola bars]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>energy granola bars</remote-alias>
+            <ordinal>50</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>energy sports drinks</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[energy sports drinks]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>energy sports drinks</remote-alias>
+            <ordinal>51</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>eye ear care</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[eye ear care]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>eye ear care</remote-alias>
+            <ordinal>52</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>facial care</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[facial care]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>facial care</remote-alias>
+            <ordinal>53</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>feminine care</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[feminine care]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>feminine care</remote-alias>
+            <ordinal>54</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>first aid</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[first aid]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>first aid</remote-alias>
+            <ordinal>55</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>food storage</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[food storage]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>food storage</remote-alias>
+            <ordinal>56</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>fresh dips tapenades</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[fresh dips tapenades]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>fresh dips tapenades</remote-alias>
+            <ordinal>57</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>fresh fruits</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[fresh fruits]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>fresh fruits</remote-alias>
+            <ordinal>58</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>fresh herbs</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[fresh herbs]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>fresh herbs</remote-alias>
+            <ordinal>59</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>fresh pasta</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[fresh pasta]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>fresh pasta</remote-alias>
+            <ordinal>60</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>fresh vegetables</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[fresh vegetables]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>fresh vegetables</remote-alias>
+            <ordinal>61</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>frozen appetizers sides</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[frozen appetizers sides]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>frozen appetizers sides</remote-alias>
+            <ordinal>62</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>frozen breads doughs</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[frozen breads doughs]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>frozen breads doughs</remote-alias>
+            <ordinal>63</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>frozen breakfast</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[frozen breakfast]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>frozen breakfast</remote-alias>
+            <ordinal>64</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>frozen dessert</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[frozen dessert]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>frozen dessert</remote-alias>
+            <ordinal>65</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>frozen juice</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[frozen juice]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>frozen juice</remote-alias>
+            <ordinal>66</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>frozen meals</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[frozen meals]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>frozen meals</remote-alias>
+            <ordinal>67</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>frozen meat seafood</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[frozen meat seafood]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>frozen meat seafood</remote-alias>
+            <ordinal>68</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>frozen pizza</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[frozen pizza]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>frozen pizza</remote-alias>
+            <ordinal>69</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>frozen produce</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[frozen produce]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>frozen produce</remote-alias>
+            <ordinal>70</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>frozen vegan vegetarian</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[frozen vegan vegetarian]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>frozen vegan vegetarian</remote-alias>
+            <ordinal>71</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>fruit vegetable snacks</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[fruit vegetable snacks]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>fruit vegetable snacks</remote-alias>
+            <ordinal>72</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>grains rice dried goods</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[grains rice dried goods]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>grains rice dried goods</remote-alias>
+            <ordinal>73</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>granola</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[granola]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>granola</remote-alias>
+            <ordinal>74</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>hair care</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[hair care]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>hair care</remote-alias>
+            <ordinal>75</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>honeys syrups nectars</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[honeys syrups nectars]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>honeys syrups nectars</remote-alias>
+            <ordinal>76</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>hot cereal pancake mixes</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[hot cereal pancake mixes]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>hot cereal pancake mixes</remote-alias>
+            <ordinal>77</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>hot dogs bacon sausage</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[hot dogs bacon sausage]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>hot dogs bacon sausage</remote-alias>
+            <ordinal>78</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ice cream ice</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ice cream ice]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>ice cream ice</remote-alias>
+            <ordinal>79</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ice cream toppings</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ice cream toppings]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>ice cream toppings</remote-alias>
+            <ordinal>80</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>indian foods</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[indian foods]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>indian foods</remote-alias>
+            <ordinal>81</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>instant foods</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[instant foods]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>instant foods</remote-alias>
+            <ordinal>82</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>juice nectars</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[juice nectars]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>juice nectars</remote-alias>
+            <ordinal>83</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>kitchen supplies</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[kitchen supplies]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>kitchen supplies</remote-alias>
+            <ordinal>84</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>kosher foods</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[kosher foods]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>kosher foods</remote-alias>
+            <ordinal>85</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>latino foods</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[latino foods]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>latino foods</remote-alias>
+            <ordinal>86</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>laundry</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[laundry]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>laundry</remote-alias>
+            <ordinal>87</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>lunch meat</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[lunch meat]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>lunch meat</remote-alias>
+            <ordinal>88</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>marinades meat preparation</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[marinades meat preparation]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>marinades meat preparation</remote-alias>
+            <ordinal>89</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>meat counter</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[meat counter]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>meat counter</remote-alias>
+            <ordinal>90</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>milk</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[milk]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>milk</remote-alias>
+            <ordinal>91</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>mint gum</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[mint gum]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>mint gum</remote-alias>
+            <ordinal>92</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>missing</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[missing]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>missing</remote-alias>
+            <ordinal>93</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>more household</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[more household]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>more household</remote-alias>
+            <ordinal>94</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>muscles joints pain relief</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[muscles joints pain relief]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>muscles joints pain relief</remote-alias>
+            <ordinal>95</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>nuts seeds dried fruit</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[nuts seeds dried fruit]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>nuts seeds dried fruit</remote-alias>
+            <ordinal>96</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>oils vinegars</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[oils vinegars]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>oils vinegars</remote-alias>
+            <ordinal>97</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>oral hygiene</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[oral hygiene]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>oral hygiene</remote-alias>
+            <ordinal>98</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>other</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[other]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>other</remote-alias>
+            <ordinal>99</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>other creams cheeses</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[other creams cheeses]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>other creams cheeses</remote-alias>
+            <ordinal>100</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>packaged cheese</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[packaged cheese]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>packaged cheese</remote-alias>
+            <ordinal>101</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>packaged meat</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[packaged meat]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>packaged meat</remote-alias>
+            <ordinal>102</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>packaged poultry</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[packaged poultry]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>packaged poultry</remote-alias>
+            <ordinal>103</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>packaged produce</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[packaged produce]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>packaged produce</remote-alias>
+            <ordinal>104</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>packaged seafood</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[packaged seafood]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>packaged seafood</remote-alias>
+            <ordinal>105</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>packaged vegetables fruits</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[packaged vegetables fruits]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>packaged vegetables fruits</remote-alias>
+            <ordinal>106</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>paper goods</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[paper goods]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>paper goods</remote-alias>
+            <ordinal>107</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>pasta sauce</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[pasta sauce]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>pasta sauce</remote-alias>
+            <ordinal>108</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>pickled goods olives</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[pickled goods olives]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>pickled goods olives</remote-alias>
+            <ordinal>109</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>plates bowls cups flatware</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[plates bowls cups flatware]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>plates bowls cups flatware</remote-alias>
+            <ordinal>110</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>popcorn jerky</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[popcorn jerky]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>popcorn jerky</remote-alias>
+            <ordinal>111</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>poultry counter</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[poultry counter]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>poultry counter</remote-alias>
+            <ordinal>112</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>prepared meals</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[prepared meals]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>prepared meals</remote-alias>
+            <ordinal>113</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>prepared soups salads</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[prepared soups salads]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>prepared soups salads</remote-alias>
+            <ordinal>114</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>preserved dips spreads</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[preserved dips spreads]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>preserved dips spreads</remote-alias>
+            <ordinal>115</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>protein meal replacements</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[protein meal replacements]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>protein meal replacements</remote-alias>
+            <ordinal>116</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>red wines</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[red wines]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>red wines</remote-alias>
+            <ordinal>117</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>refrigerated</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[refrigerated]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>refrigerated</remote-alias>
+            <ordinal>118</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>refrigerated pudding desserts</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[refrigerated pudding desserts]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>refrigerated pudding desserts</remote-alias>
+            <ordinal>119</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>salad dressing toppings</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[salad dressing toppings]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>salad dressing toppings</remote-alias>
+            <ordinal>120</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>seafood counter</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[seafood counter]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>seafood counter</remote-alias>
+            <ordinal>121</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>shave needs</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[shave needs]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>shave needs</remote-alias>
+            <ordinal>122</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>skin care</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[skin care]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>skin care</remote-alias>
+            <ordinal>123</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>soap</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[soap]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>soap</remote-alias>
+            <ordinal>124</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>soft drinks</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[soft drinks]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>soft drinks</remote-alias>
+            <ordinal>125</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>soup broth bouillon</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[soup broth bouillon]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>soup broth bouillon</remote-alias>
+            <ordinal>126</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>soy lactosefree</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[soy lactosefree]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>soy lactosefree</remote-alias>
+            <ordinal>127</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>specialty cheeses</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[specialty cheeses]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>specialty cheeses</remote-alias>
+            <ordinal>128</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>specialty wines champagnes</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[specialty wines champagnes]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>specialty wines champagnes</remote-alias>
+            <ordinal>129</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>spices seasonings</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[spices seasonings]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>spices seasonings</remote-alias>
+            <ordinal>130</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>spirits</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[spirits]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>spirits</remote-alias>
+            <ordinal>131</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>spreads</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[spreads]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>spreads</remote-alias>
+            <ordinal>132</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>tea</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[tea]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>tea</remote-alias>
+            <ordinal>133</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>tofu meat alternatives</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[tofu meat alternatives]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>tofu meat alternatives</remote-alias>
+            <ordinal>134</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>tortillas flat bread</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[tortillas flat bread]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>tortillas flat bread</remote-alias>
+            <ordinal>135</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>trail mix snack mix</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[trail mix snack mix]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>trail mix snack mix</remote-alias>
+            <ordinal>136</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>trash bags liners</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[trash bags liners]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>trash bags liners</remote-alias>
+            <ordinal>137</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>vitamins supplements</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[vitamins supplements]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>vitamins supplements</remote-alias>
+            <ordinal>138</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>water seltzer sparkling water</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[water seltzer sparkling water]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>water seltzer sparkling water</remote-alias>
+            <ordinal>139</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>white wines</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[white wines]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>white wines</remote-alias>
+            <ordinal>140</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>yogurt</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[yogurt]</local-name>
+            <parent-name>[grocery_timestamp.csv]</parent-name>
+            <remote-alias>yogurt</remote-alias>
+            <ordinal>141</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <_.fcp.ObjectModelTableType.true...column caption='grocery_timestamp.csv' datatype='table' name='[__tableau_internal_object_id__].[grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53]' role='measure' type='quantitative' />
+      <column caption='Air Fresheners Candles' datatype='integer' name='[air fresheners candles]' role='measure' type='quantitative' />
+      <column aggregation='Hour' caption='Arrival  Timestamp' datatype='datetime' name='[arrival_ timestamp]' role='dimension' type='ordinal' />
+      <column caption='Asian Foods' datatype='integer' name='[asian foods]' role='measure' type='quantitative' />
+      <column caption='Baby Accessories' datatype='integer' name='[baby accessories]' role='measure' type='quantitative' />
+      <column caption='Baby Bath Body Care' datatype='integer' name='[baby bath body care]' role='measure' type='quantitative' />
+      <column caption='Baby Food Formula' datatype='integer' name='[baby food formula]' role='measure' type='quantitative' />
+      <column caption='Bakery Desserts' datatype='integer' name='[bakery desserts]' role='measure' type='quantitative' />
+      <column caption='Baking Ingredients' datatype='integer' name='[baking ingredients]' role='measure' type='quantitative' />
+      <column caption='Baking Supplies Decor' datatype='integer' name='[baking supplies decor]' role='measure' type='quantitative' />
+      <column caption='Beauty' datatype='integer' name='[beauty]' role='measure' type='quantitative' />
+      <column caption='Beers Coolers' datatype='integer' name='[beers coolers]' role='measure' type='quantitative' />
+      <column caption='Body Lotions Soap' datatype='integer' name='[body lotions soap]' role='measure' type='quantitative' />
+      <column caption='Bread' datatype='integer' name='[bread]' role='measure' type='quantitative' />
+      <column caption='Breakfast Bakery' datatype='integer' name='[breakfast bakery]' role='measure' type='quantitative' />
+      <column caption='Breakfast Bars Pastries' datatype='integer' name='[breakfast bars pastries]' role='measure' type='quantitative' />
+      <column caption='Bulk Dried Fruits Vegetables' datatype='integer' name='[bulk dried fruits vegetables]' role='measure' type='quantitative' />
+      <column caption='Bulk Grains Rice Dried Goods' datatype='integer' name='[bulk grains rice dried goods]' role='measure' type='quantitative' />
+      <column caption='Buns Rolls' datatype='integer' name='[buns rolls]' role='measure' type='quantitative' />
+      <column caption='Butter' datatype='integer' name='[butter]' role='measure' type='quantitative' />
+      <column caption='Candy Chocolate' datatype='integer' name='[candy chocolate]' role='measure' type='quantitative' />
+      <column caption='Canned Fruit Applesauce' datatype='integer' name='[canned fruit applesauce]' role='measure' type='quantitative' />
+      <column caption='Canned Jarred Vegetables' datatype='integer' name='[canned jarred vegetables]' role='measure' type='quantitative' />
+      <column caption='Canned Meals Beans' datatype='integer' name='[canned meals beans]' role='measure' type='quantitative' />
+      <column caption='Canned Meat Seafood' datatype='integer' name='[canned meat seafood]' role='measure' type='quantitative' />
+      <column caption='Cat Food Care' datatype='integer' name='[cat food care]' role='measure' type='quantitative' />
+      <column caption='Cereal' datatype='integer' name='[cereal]' role='measure' type='quantitative' />
+      <column caption='Chips Pretzels' datatype='integer' name='[chips pretzels]' role='measure' type='quantitative' />
+      <column caption='Cleaning Products' datatype='integer' name='[cleaning products]' role='measure' type='quantitative' />
+      <column caption='Cocoa Drink Mixes' datatype='integer' name='[cocoa drink mixes]' role='measure' type='quantitative' />
+      <column caption='Coffee' datatype='integer' name='[coffee]' role='measure' type='quantitative' />
+      <column caption='Cold Flu Allergy' datatype='integer' name='[cold flu allergy]' role='measure' type='quantitative' />
+      <column caption='Condiments' datatype='integer' name='[condiments]' role='measure' type='quantitative' />
+      <column caption='Cookies Cakes' datatype='integer' name='[cookies cakes]' role='measure' type='quantitative' />
+      <column caption='Crackers' datatype='integer' name='[crackers]' role='measure' type='quantitative' />
+      <column caption='Cream' datatype='integer' name='[cream]' role='measure' type='quantitative' />
+      <column caption='Days Since Prior Order' datatype='integer' name='[days_since_prior_order]' role='measure' type='quantitative' />
+      <column caption='Deodorants' datatype='integer' name='[deodorants]' role='measure' type='quantitative' />
+      <column caption='Diapers Wipes' datatype='integer' name='[diapers wipes]' role='measure' type='quantitative' />
+      <column caption='Digestion' datatype='integer' name='[digestion]' role='measure' type='quantitative' />
+      <column caption='Dish Detergents' datatype='integer' name='[dish detergents]' role='measure' type='quantitative' />
+      <column caption='Dog Food Care' datatype='integer' name='[dog food care]' role='measure' type='quantitative' />
+      <column caption='Doughs Gelatins Bake Mixes' datatype='integer' name='[doughs gelatins bake mixes]' role='measure' type='quantitative' />
+      <column caption='Dry Pasta' datatype='integer' name='[dry pasta]' role='measure' type='quantitative' />
+      <column caption='Eggs' datatype='integer' name='[eggs]' role='measure' type='quantitative' />
+      <column caption='Energy Granola Bars' datatype='integer' name='[energy granola bars]' role='measure' type='quantitative' />
+      <column caption='Energy Sports Drinks' datatype='integer' name='[energy sports drinks]' role='measure' type='quantitative' />
+      <column caption='Eye Ear Care' datatype='integer' name='[eye ear care]' role='measure' type='quantitative' />
+      <column caption='Facial Care' datatype='integer' name='[facial care]' role='measure' type='quantitative' />
+      <column caption='Feminine Care' datatype='integer' name='[feminine care]' role='measure' type='quantitative' />
+      <column caption='Finish Service Time' datatype='datetime' name='[finish_service_time]' role='dimension' type='ordinal' />
+      <column caption='First Aid' datatype='integer' name='[first aid]' role='measure' type='quantitative' />
+      <column caption='Food Storage' datatype='integer' name='[food storage]' role='measure' type='quantitative' />
+      <column caption='Fresh Dips Tapenades' datatype='integer' name='[fresh dips tapenades]' role='measure' type='quantitative' />
+      <column caption='Fresh Fruits' datatype='integer' name='[fresh fruits]' role='measure' type='quantitative' />
+      <column caption='Fresh Herbs' datatype='integer' name='[fresh herbs]' role='measure' type='quantitative' />
+      <column caption='Fresh Pasta' datatype='integer' name='[fresh pasta]' role='measure' type='quantitative' />
+      <column caption='Fresh Vegetables' datatype='integer' name='[fresh vegetables]' role='measure' type='quantitative' />
+      <column caption='Frozen Appetizers Sides' datatype='integer' name='[frozen appetizers sides]' role='measure' type='quantitative' />
+      <column caption='Frozen Breads Doughs' datatype='integer' name='[frozen breads doughs]' role='measure' type='quantitative' />
+      <column caption='Frozen Breakfast' datatype='integer' name='[frozen breakfast]' role='measure' type='quantitative' />
+      <column caption='Frozen Dessert' datatype='integer' name='[frozen dessert]' role='measure' type='quantitative' />
+      <column caption='Frozen Juice' datatype='integer' name='[frozen juice]' role='measure' type='quantitative' />
+      <column caption='Frozen Meals' datatype='integer' name='[frozen meals]' role='measure' type='quantitative' />
+      <column caption='Frozen Meat Seafood' datatype='integer' name='[frozen meat seafood]' role='measure' type='quantitative' />
+      <column caption='Frozen Pizza' datatype='integer' name='[frozen pizza]' role='measure' type='quantitative' />
+      <column caption='Frozen Produce' datatype='integer' name='[frozen produce]' role='measure' type='quantitative' />
+      <column caption='Frozen Vegan Vegetarian' datatype='integer' name='[frozen vegan vegetarian]' role='measure' type='quantitative' />
+      <column caption='Fruit Vegetable Snacks' datatype='integer' name='[fruit vegetable snacks]' role='measure' type='quantitative' />
+      <column caption='Grains Rice Dried Goods' datatype='integer' name='[grains rice dried goods]' role='measure' type='quantitative' />
+      <column caption='Granola' datatype='integer' name='[granola]' role='measure' type='quantitative' />
+      <column caption='Hair Care' datatype='integer' name='[hair care]' role='measure' type='quantitative' />
+      <column caption='Honeys Syrups Nectars' datatype='integer' name='[honeys syrups nectars]' role='measure' type='quantitative' />
+      <column caption='Hot Cereal Pancake Mixes' datatype='integer' name='[hot cereal pancake mixes]' role='measure' type='quantitative' />
+      <column caption='Hot Dogs Bacon Sausage' datatype='integer' name='[hot dogs bacon sausage]' role='measure' type='quantitative' />
+      <column caption='Ice Cream Ice' datatype='integer' name='[ice cream ice]' role='measure' type='quantitative' />
+      <column caption='Ice Cream Toppings' datatype='integer' name='[ice cream toppings]' role='measure' type='quantitative' />
+      <column caption='Indian Foods' datatype='integer' name='[indian foods]' role='measure' type='quantitative' />
+      <column caption='Instant Foods' datatype='integer' name='[instant foods]' role='measure' type='quantitative' />
+      <column caption='Juice Nectars' datatype='integer' name='[juice nectars]' role='measure' type='quantitative' />
+      <column caption='Kitchen Supplies' datatype='integer' name='[kitchen supplies]' role='measure' type='quantitative' />
+      <column caption='Kosher Foods' datatype='integer' name='[kosher foods]' role='measure' type='quantitative' />
+      <column caption='Latino Foods' datatype='integer' name='[latino foods]' role='measure' type='quantitative' />
+      <column caption='Laundry' datatype='integer' name='[laundry]' role='measure' type='quantitative' />
+      <column caption='Lunch Meat' datatype='integer' name='[lunch meat]' role='measure' type='quantitative' />
+      <column caption='Marinades Meat Preparation' datatype='integer' name='[marinades meat preparation]' role='measure' type='quantitative' />
+      <column caption='Meat Counter' datatype='integer' name='[meat counter]' role='measure' type='quantitative' />
+      <column caption='Milk' datatype='integer' name='[milk]' role='measure' type='quantitative' />
+      <column caption='Mint Gum' datatype='integer' name='[mint gum]' role='measure' type='quantitative' />
+      <column caption='Missing' datatype='integer' name='[missing]' role='measure' type='quantitative' />
+      <column caption='More Household' datatype='integer' name='[more household]' role='measure' type='quantitative' />
+      <column caption='Muscles Joints Pain Relief' datatype='integer' name='[muscles joints pain relief]' role='measure' type='quantitative' />
+      <column caption='Nuts Seeds Dried Fruit' datatype='integer' name='[nuts seeds dried fruit]' role='measure' type='quantitative' />
+      <column caption='Oils Vinegars' datatype='integer' name='[oils vinegars]' role='measure' type='quantitative' />
+      <column caption='Oral Hygiene' datatype='integer' name='[oral hygiene]' role='measure' type='quantitative' />
+      <column caption='Order Hour Of Day' datatype='integer' name='[order_hour_of_day]' role='dimension' type='quantitative' />
+      <column caption='Order Id' datatype='integer' name='[order_id]' role='dimension' type='ordinal' />
+      <column caption='Other Creams Cheeses' datatype='integer' name='[other creams cheeses]' role='measure' type='quantitative' />
+      <column caption='Other' datatype='integer' name='[other]' role='measure' type='quantitative' />
+      <column caption='Packaged Cheese' datatype='integer' name='[packaged cheese]' role='measure' type='quantitative' />
+      <column caption='Packaged Meat' datatype='integer' name='[packaged meat]' role='measure' type='quantitative' />
+      <column caption='Packaged Poultry' datatype='integer' name='[packaged poultry]' role='measure' type='quantitative' />
+      <column caption='Packaged Produce' datatype='integer' name='[packaged produce]' role='measure' type='quantitative' />
+      <column caption='Packaged Seafood' datatype='integer' name='[packaged seafood]' role='measure' type='quantitative' />
+      <column caption='Packaged Vegetables Fruits' datatype='integer' name='[packaged vegetables fruits]' role='measure' type='quantitative' />
+      <column caption='Paper Goods' datatype='integer' name='[paper goods]' role='measure' type='quantitative' />
+      <column caption='Pasta Sauce' datatype='integer' name='[pasta sauce]' role='measure' type='quantitative' />
+      <column caption='Pay Method' datatype='integer' name='[pay_method]' role='measure' type='quantitative' />
+      <column caption='Pickled Goods Olives' datatype='integer' name='[pickled goods olives]' role='measure' type='quantitative' />
+      <column aggregation='Hour' caption='Pickup Timestamp' datatype='datetime' name='[pickup_timestamp]' role='dimension' type='ordinal' />
+      <column caption='Plates Bowls Cups Flatware' datatype='integer' name='[plates bowls cups flatware]' role='measure' type='quantitative' />
+      <column caption='Popcorn Jerky' datatype='integer' name='[popcorn jerky]' role='measure' type='quantitative' />
+      <column caption='Poultry Counter' datatype='integer' name='[poultry counter]' role='measure' type='quantitative' />
+      <column caption='Prepared Meals' datatype='integer' name='[prepared meals]' role='measure' type='quantitative' />
+      <column caption='Prepared Soups Salads' datatype='integer' name='[prepared soups salads]' role='measure' type='quantitative' />
+      <column caption='Preserved Dips Spreads' datatype='integer' name='[preserved dips spreads]' role='measure' type='quantitative' />
+      <column caption='Protein Meal Replacements' datatype='integer' name='[protein meal replacements]' role='measure' type='quantitative' />
+      <column caption='Red Wines' datatype='integer' name='[red wines]' role='measure' type='quantitative' />
+      <column caption='Refrigerated Pudding Desserts' datatype='integer' name='[refrigerated pudding desserts]' role='measure' type='quantitative' />
+      <column caption='Refrigerated' datatype='integer' name='[refrigerated]' role='measure' type='quantitative' />
+      <column caption='Salad Dressing Toppings' datatype='integer' name='[salad dressing toppings]' role='measure' type='quantitative' />
+      <column caption='Seafood Counter' datatype='integer' name='[seafood counter]' role='measure' type='quantitative' />
+      <column caption='Shave Needs' datatype='integer' name='[shave needs]' role='measure' type='quantitative' />
+      <column caption='Skin Care' datatype='integer' name='[skin care]' role='measure' type='quantitative' />
+      <column caption='Soap' datatype='integer' name='[soap]' role='measure' type='quantitative' />
+      <column caption='Soft Drinks' datatype='integer' name='[soft drinks]' role='measure' type='quantitative' />
+      <column caption='Soup Broth Bouillon' datatype='integer' name='[soup broth bouillon]' role='measure' type='quantitative' />
+      <column caption='Soy Lactosefree' datatype='integer' name='[soy lactosefree]' role='measure' type='quantitative' />
+      <column caption='Specialty Cheeses' datatype='integer' name='[specialty cheeses]' role='measure' type='quantitative' />
+      <column caption='Specialty Wines Champagnes' datatype='integer' name='[specialty wines champagnes]' role='measure' type='quantitative' />
+      <column caption='Spices Seasonings' datatype='integer' name='[spices seasonings]' role='measure' type='quantitative' />
+      <column caption='Spirits' datatype='integer' name='[spirits]' role='measure' type='quantitative' />
+      <column caption='Spreads' datatype='integer' name='[spreads]' role='measure' type='quantitative' />
+      <column aggregation='Hour' caption='Start Service Time' datatype='datetime' name='[start_service_time]' role='dimension' type='ordinal' />
+      <column caption='Tea' datatype='integer' name='[tea]' role='measure' type='quantitative' />
+      <column caption='Tofu Meat Alternatives' datatype='integer' name='[tofu meat alternatives]' role='measure' type='quantitative' />
+      <column caption='Tortillas Flat Bread' datatype='integer' name='[tortillas flat bread]' role='measure' type='quantitative' />
+      <column caption='Trail Mix Snack Mix' datatype='integer' name='[trail mix snack mix]' role='measure' type='quantitative' />
+      <column caption='Trash Bags Liners' datatype='integer' name='[trash bags liners]' role='measure' type='quantitative' />
+      <column caption='Vitamins Supplements' datatype='integer' name='[vitamins supplements]' role='measure' type='quantitative' />
+      <column caption='Water Seltzer Sparkling Water' datatype='integer' name='[water seltzer sparkling water]' role='measure' type='quantitative' />
+      <column caption='White Wines' datatype='integer' name='[white wines]' role='measure' type='quantitative' />
+      <column caption='Yogurt' datatype='integer' name='[yogurt]' role='measure' type='quantitative' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='grocery_timestamp.csv' id='grocery_timestamp.csv_31AE55F3185F48BC9BA4607DE58E8B53'>
+            <properties context=''>
+              <relation connection='textscan.1n3cbg702zmg8h1fjf0vd0qvfoet' name='grocery_timestamp.csv' table='[grocery_timestamp#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=';'>
+                  <column datatype='integer' name='order_id' ordinal='0' />
+                  <column datatype='integer' name='pay_method' ordinal='1' />
+                  <column datatype='integer' name='order_hour_of_day' ordinal='2' />
+                  <column datatype='datetime' name='arrival_ timestamp' ordinal='3' />
+                  <column datatype='datetime' name='pickup_timestamp' ordinal='4' />
+                  <column datatype='datetime' name='start_service_time' ordinal='5' />
+                  <column datatype='datetime' name='finish_service_time' ordinal='6' />
+                  <column datatype='integer' name='days_since_prior_order' ordinal='7' />
+                  <column datatype='integer' name='air fresheners candles' ordinal='8' />
+                  <column datatype='integer' name='asian foods' ordinal='9' />
+                  <column datatype='integer' name='baby accessories' ordinal='10' />
+                  <column datatype='integer' name='baby bath body care' ordinal='11' />
+                  <column datatype='integer' name='baby food formula' ordinal='12' />
+                  <column datatype='integer' name='bakery desserts' ordinal='13' />
+                  <column datatype='integer' name='baking ingredients' ordinal='14' />
+                  <column datatype='integer' name='baking supplies decor' ordinal='15' />
+                  <column datatype='integer' name='beauty' ordinal='16' />
+                  <column datatype='integer' name='beers coolers' ordinal='17' />
+                  <column datatype='integer' name='body lotions soap' ordinal='18' />
+                  <column datatype='integer' name='bread' ordinal='19' />
+                  <column datatype='integer' name='breakfast bakery' ordinal='20' />
+                  <column datatype='integer' name='breakfast bars pastries' ordinal='21' />
+                  <column datatype='integer' name='bulk dried fruits vegetables' ordinal='22' />
+                  <column datatype='integer' name='bulk grains rice dried goods' ordinal='23' />
+                  <column datatype='integer' name='buns rolls' ordinal='24' />
+                  <column datatype='integer' name='butter' ordinal='25' />
+                  <column datatype='integer' name='candy chocolate' ordinal='26' />
+                  <column datatype='integer' name='canned fruit applesauce' ordinal='27' />
+                  <column datatype='integer' name='canned jarred vegetables' ordinal='28' />
+                  <column datatype='integer' name='canned meals beans' ordinal='29' />
+                  <column datatype='integer' name='canned meat seafood' ordinal='30' />
+                  <column datatype='integer' name='cat food care' ordinal='31' />
+                  <column datatype='integer' name='cereal' ordinal='32' />
+                  <column datatype='integer' name='chips pretzels' ordinal='33' />
+                  <column datatype='integer' name='cleaning products' ordinal='34' />
+                  <column datatype='integer' name='cocoa drink mixes' ordinal='35' />
+                  <column datatype='integer' name='coffee' ordinal='36' />
+                  <column datatype='integer' name='cold flu allergy' ordinal='37' />
+                  <column datatype='integer' name='condiments' ordinal='38' />
+                  <column datatype='integer' name='cookies cakes' ordinal='39' />
+                  <column datatype='integer' name='crackers' ordinal='40' />
+                  <column datatype='integer' name='cream' ordinal='41' />
+                  <column datatype='integer' name='deodorants' ordinal='42' />
+                  <column datatype='integer' name='diapers wipes' ordinal='43' />
+                  <column datatype='integer' name='digestion' ordinal='44' />
+                  <column datatype='integer' name='dish detergents' ordinal='45' />
+                  <column datatype='integer' name='dog food care' ordinal='46' />
+                  <column datatype='integer' name='doughs gelatins bake mixes' ordinal='47' />
+                  <column datatype='integer' name='dry pasta' ordinal='48' />
+                  <column datatype='integer' name='eggs' ordinal='49' />
+                  <column datatype='integer' name='energy granola bars' ordinal='50' />
+                  <column datatype='integer' name='energy sports drinks' ordinal='51' />
+                  <column datatype='integer' name='eye ear care' ordinal='52' />
+                  <column datatype='integer' name='facial care' ordinal='53' />
+                  <column datatype='integer' name='feminine care' ordinal='54' />
+                  <column datatype='integer' name='first aid' ordinal='55' />
+                  <column datatype='integer' name='food storage' ordinal='56' />
+                  <column datatype='integer' name='fresh dips tapenades' ordinal='57' />
+                  <column datatype='integer' name='fresh fruits' ordinal='58' />
+                  <column datatype='integer' name='fresh herbs' ordinal='59' />
+                  <column datatype='integer' name='fresh pasta' ordinal='60' />
+                  <column datatype='integer' name='fresh vegetables' ordinal='61' />
+                  <column datatype='integer' name='frozen appetizers sides' ordinal='62' />
+                  <column datatype='integer' name='frozen breads doughs' ordinal='63' />
+                  <column datatype='integer' name='frozen breakfast' ordinal='64' />
+                  <column datatype='integer' name='frozen dessert' ordinal='65' />
+                  <column datatype='integer' name='frozen juice' ordinal='66' />
+                  <column datatype='integer' name='frozen meals' ordinal='67' />
+                  <column datatype='integer' name='frozen meat seafood' ordinal='68' />
+                  <column datatype='integer' name='frozen pizza' ordinal='69' />
+                  <column datatype='integer' name='frozen produce' ordinal='70' />
+                  <column datatype='integer' name='frozen vegan vegetarian' ordinal='71' />
+                  <column datatype='integer' name='fruit vegetable snacks' ordinal='72' />
+                  <column datatype='integer' name='grains rice dried goods' ordinal='73' />
+                  <column datatype='integer' name='granola' ordinal='74' />
+                  <column datatype='integer' name='hair care' ordinal='75' />
+                  <column datatype='integer' name='honeys syrups nectars' ordinal='76' />
+                  <column datatype='integer' name='hot cereal pancake mixes' ordinal='77' />
+                  <column datatype='integer' name='hot dogs bacon sausage' ordinal='78' />
+                  <column datatype='integer' name='ice cream ice' ordinal='79' />
+                  <column datatype='integer' name='ice cream toppings' ordinal='80' />
+                  <column datatype='integer' name='indian foods' ordinal='81' />
+                  <column datatype='integer' name='instant foods' ordinal='82' />
+                  <column datatype='integer' name='juice nectars' ordinal='83' />
+                  <column datatype='integer' name='kitchen supplies' ordinal='84' />
+                  <column datatype='integer' name='kosher foods' ordinal='85' />
+                  <column datatype='integer' name='latino foods' ordinal='86' />
+                  <column datatype='integer' name='laundry' ordinal='87' />
+                  <column datatype='integer' name='lunch meat' ordinal='88' />
+                  <column datatype='integer' name='marinades meat preparation' ordinal='89' />
+                  <column datatype='integer' name='meat counter' ordinal='90' />
+                  <column datatype='integer' name='milk' ordinal='91' />
+                  <column datatype='integer' name='mint gum' ordinal='92' />
+                  <column datatype='integer' name='missing' ordinal='93' />
+                  <column datatype='integer' name='more household' ordinal='94' />
+                  <column datatype='integer' name='muscles joints pain relief' ordinal='95' />
+                  <column datatype='integer' name='nuts seeds dried fruit' ordinal='96' />
+                  <column datatype='integer' name='oils vinegars' ordinal='97' />
+                  <column datatype='integer' name='oral hygiene' ordinal='98' />
+                  <column datatype='integer' name='other' ordinal='99' />
+                  <column datatype='integer' name='other creams cheeses' ordinal='100' />
+                  <column datatype='integer' name='packaged cheese' ordinal='101' />
+                  <column datatype='integer' name='packaged meat' ordinal='102' />
+                  <column datatype='integer' name='packaged poultry' ordinal='103' />
+                  <column datatype='integer' name='packaged produce' ordinal='104' />
+                  <column datatype='integer' name='packaged seafood' ordinal='105' />
+                  <column datatype='integer' name='packaged vegetables fruits' ordinal='106' />
+                  <column datatype='integer' name='paper goods' ordinal='107' />
+                  <column datatype='integer' name='pasta sauce' ordinal='108' />
+                  <column datatype='integer' name='pickled goods olives' ordinal='109' />
+                  <column datatype='integer' name='plates bowls cups flatware' ordinal='110' />
+                  <column datatype='integer' name='popcorn jerky' ordinal='111' />
+                  <column datatype='integer' name='poultry counter' ordinal='112' />
+                  <column datatype='integer' name='prepared meals' ordinal='113' />
+                  <column datatype='integer' name='prepared soups salads' ordinal='114' />
+                  <column datatype='integer' name='preserved dips spreads' ordinal='115' />
+                  <column datatype='integer' name='protein meal replacements' ordinal='116' />
+                  <column datatype='integer' name='red wines' ordinal='117' />
+                  <column datatype='integer' name='refrigerated' ordinal='118' />
+                  <column datatype='integer' name='refrigerated pudding desserts' ordinal='119' />
+                  <column datatype='integer' name='salad dressing toppings' ordinal='120' />
+                  <column datatype='integer' name='seafood counter' ordinal='121' />
+                  <column datatype='integer' name='shave needs' ordinal='122' />
+                  <column datatype='integer' name='skin care' ordinal='123' />
+                  <column datatype='integer' name='soap' ordinal='124' />
+                  <column datatype='integer' name='soft drinks' ordinal='125' />
+                  <column datatype='integer' name='soup broth bouillon' ordinal='126' />
+                  <column datatype='integer' name='soy lactosefree' ordinal='127' />
+                  <column datatype='integer' name='specialty cheeses' ordinal='128' />
+                  <column datatype='integer' name='specialty wines champagnes' ordinal='129' />
+                  <column datatype='integer' name='spices seasonings' ordinal='130' />
+                  <column datatype='integer' name='spirits' ordinal='131' />
+                  <column datatype='integer' name='spreads' ordinal='132' />
+                  <column datatype='integer' name='tea' ordinal='133' />
+                  <column datatype='integer' name='tofu meat alternatives' ordinal='134' />
+                  <column datatype='integer' name='tortillas flat bread' ordinal='135' />
+                  <column datatype='integer' name='trail mix snack mix' ordinal='136' />
+                  <column datatype='integer' name='trash bags liners' ordinal='137' />
+                  <column datatype='integer' name='vitamins supplements' ordinal='138' />
+                  <column datatype='integer' name='water seltzer sparkling water' ordinal='139' />
+                  <column datatype='integer' name='white wines' ordinal='140' />
+                  <column datatype='integer' name='yogurt' ordinal='141' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='grocery_timestamp' name='federated.0wfxm061ehri9z18sk17y1i02fuq' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0wfxm061ehri9z18sk17y1i02fuq'>
+            <column caption='Baby Food Formula' datatype='integer' name='[baby food formula]' role='measure' type='quantitative' />
+            <column caption='Finish Service Time' datatype='datetime' name='[finish_service_time]' role='dimension' type='ordinal' />
+            <column-instance column='[finish_service_time]' derivation='Hour' name='[hr:finish_service_time:ok]' pivot='key' type='ordinal' />
+            <column caption='Ice Cream Ice' datatype='integer' name='[ice cream ice]' role='measure' type='quantitative' />
+            <column-instance column='[baby food formula]' derivation='Sum' name='[sum:baby food formula:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[ice cream ice]' derivation='Sum' name='[sum:ice cream ice:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0wfxm061ehri9z18sk17y1i02fuq].[sum:ice cream ice:qk]' field-type='quantitative' fold='true' scope='rows' type='space' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.0wfxm061ehri9z18sk17y1i02fuq].[:Measure Names]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-transparency' value='196' />
+                <format attr='has-stroke' value='true' />
+                <format attr='stroke-color' value='#000000' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0wfxm061ehri9z18sk17y1i02fuq].[sum:baby food formula:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.0wfxm061ehri9z18sk17y1i02fuq].[:Measure Names]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-transparency' value='196' />
+                <format attr='has-stroke' value='true' />
+                <format attr='stroke-color' value='#000000' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0wfxm061ehri9z18sk17y1i02fuq].[sum:ice cream ice:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.0wfxm061ehri9z18sk17y1i02fuq].[:Measure Names]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-transparency' value='196' />
+                <format attr='has-stroke' value='true' />
+                <format attr='stroke-color' value='#000000' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0wfxm061ehri9z18sk17y1i02fuq].[sum:baby food formula:qk] + [federated.0wfxm061ehri9z18sk17y1i02fuq].[sum:ice cream ice:qk])</rows>
+        <cols>[federated.0wfxm061ehri9z18sk17y1i02fuq].[hr:finish_service_time:ok]</cols>
+      </table>
+      <simple-id uuid='{61728737-0313-4002-BFE5-B69203CA569F}' />
+    </worksheet>
+    <worksheet name='Sheet 2'>
+      <table>
+        <view>
+          <datasources />
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{8533C5E1-17FC-4153-A750-565EDD6CD2EB}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='1' param='[federated.0wfxm061ehri9z18sk17y1i02fuq].[:Measure Names]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0wfxm061ehri9z18sk17y1i02fuq].[hr:finish_service_time:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{208B79F1-508D-4C39-BFF1-CC065186447B}' />
+    </window>
+    <window class='worksheet' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{B2721909-905B-461A-8A7A-88006E847B1B}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Sheet 1' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAAIXElEQVR4nO3dTXNbVx3H8d+9epZtJbItu35q0gChDaXDkG6AF8KOGTasWPMKeBUsGTYw
+      Q4YXwDCUacOEDp3OxM2UTGkSYjeJFceSJVsPV7qni4BJIznWiS3J0v/7memq9ypncb6690i6
+      x4FzzgkwKjztC9APJtmpA6jX62cxDmAskuMeADAWzYr+8o87p78CABOpVdXDcp0AYFQyq+vX
+      f6jAPffar1Or1TQ3N3eGIwNG52gN8LqL2UajoSAIzmxAwCglJSkIglO9i3MFwKRiDQDTCACm
+      EQBMIwCYRgAwjQBgGgHANAKAaQQA0wgApnk9D+CcUxzHCoNAsaRESD+YbF4BPN16oHLLKeNa
+      SuYu6M21N+Sc47FITCyvAFL5nA62Hyi/tqxyuayN1WU559Ttdoc1PmCovAKYnS1o5c1LKs6m
+      NTNzUWEYKgxDJZM8WYnJFJx2WxQeiMEkYxUL0wgAphEATCMAmEYAMI0AYBoBwDQCgGkEANMI
+      AKYRAEwjAJhGADCNAGAaAcA0AoBpBADTCACmEQBM83qavVHZ1f2n+yoVsqq1nN7aWB3WuICR
+      8ArgoNGU63R00O4qqeebZMVxrE6nM6zxAUPlFUA2n5PbrSpURo3IsS0KJh7bosA0FsEwjXsX
+      nGvtdlvtdnvg42dmZrz+cDsB4Fz73R/+pA8+Kw90bHn7nm785tfKZrMDvz4B4FxLp7Naufzd
+      gY6NY/9NmlkDwDQCgGkEANMIAKYRAEwjAJhGADCNAGAaAcA0AoBpBADTCACmEQBMIwCYRgAw
+      ze95AOf0dHdX6YS0dxDp0vrKkIYFjIZXAM16VV/+Z1vz+ZTyxSW2RcHQxXGsgfdtcE7dbtdr
+      PnoFsF+vKzqsKbf8lp48eaLV5UW2RcFQhWE4+DO+QaBEIuE1H71m7tLKupZW1iVJa2trPqcC
+      5xKLYJhGADCNAGAaAcA0AoBpBADTCACmEQBMIwCYRgAwjQBgGgHANAKAaQQA0wgAphEATCMA
+      mEYAMI0AYJr30+xRFCkMpE4sZdKpYYwJGBmvALrtQ93656bWl+d1GDm9c/Xbcs4pjuNhjQ/G
+      ObnBt0WRvOejVwCPv3qkbtRUqxsolQiO/kGfAQI+vOaW85+PXgGsXf6WSqsbClxHjUgKgkBh
+      GCqRSPi8DDCwMPDZF0je89F7DZBOpyWllcr4ngmcP3wKBNMIAKYRAEwjAJhGADCNAGAaAcA0
+      AoBpBADTCACmEQBMIwCYRgAwjQBgGgHANAKAaQQA0wgAphEATPN6Jvhgf0/3t3Y0X8yr3U3q
+      0vrKsMYFjIRXAPl8Xq1mU+1WSu04Vvzf/zqdzrDGB+PiOB58mxPn1O12veajVwC1Wk3ZTFrp
+      bFatg7bCMFQYhkomvTeXAAYShj7bogRKJBJe89Fr5haKi7pWXJQkcfODacAiGKYRAEwjAJhG
+      ADCNAGAaAcA0AoBpBADTCACmEQBMIwCY1jeAqNVUubwr/vYjpl3fAG5/elO//+0NtUc9GmDE
+      egI4qJT1rBZrcW2e+yNMvZ45PnOxpPeuXdXyUkkD/gobmFjHvskHCsSfv8a06xtA+fFjhakU
+      VwBMvb4BNNtt5XM5AsDU6/tIZCaT0WHEh6CYbLf+9mfVvvz7K4/pG0AuldBOrd2zBmjUq9re
+      qWh5fla1ltPq8uJZjRU4cwc79/Tj3N1XHtM3gMNWR639Ss8XYelUSvt7FYXJQAnnFMfzbIuC
+      oTrNtiiDnNsTQNRqa2FxQTWXUeql/3dweKhQXcWdSM3IsS0Khu4026KEYajAvfrcnpm7tXlb
+      m1tfafXtd3pugQrFRf3gOrc9mB49Aay/e03Z1VVJIZ8CYer1fAzaaTX00Ycf6eObt9Qcx4iA
+      Eeq5AuQK8/rJ++/qr598oew4RgSckXYUaXun/Mpj+q5ed8pPFUeRuuKBAUwup0Cdno9yvqlv
+      AIWLRS0UI9YAmHrHvsGnUyl+DIep13MFeHj7M1WjSN//0ft+W0cDE6jnClBcK6nRauje5ufq
+      jmNEwAj1BDA7v6QrGyvK5jPqRPzEAdOt7xqgE7VUqexr6+H2qMcDjFRPAM457ezsqvZsTxtX
+      Lo1jTMDI9Kxzm7U97R821I75DgBn44MPb+rjzfsDHXtYr+pXv/y5stnRfA3b95vguXygzU+2
+      1JVO+BoBONn24109DZYGOvbRs8pIf17f8yYfHVbVSRS0fnVd6ZENAxiPngC2P7+r+1/8W+1m
+      pPo4RgSMUJ+fQ7+nmY3LCoJQs+MYETBCPQEk0xmVSqVxjAUYOT7ogWkEANO8Aoi7HT3bq6rV
+      ONCzyv6wxgSMjNcPPpvNhna2t+VSUuFCSc45xXGsOGYTLRzPOee1tcmLcyr2OldHc/L//+6r
+      T/G6AjTr+wqzORXnCnr06JEkDb5lBfAavKZXz7Enn+x1BZi7uKAg3VQ+n1WhWFIQBAqCQGHI
+      UgLH+988GfDgo/2mpOe7lPu8yb44H4Pg5IC8AkhlsipmeFQe04O3bphGADCNAGAaAcA0AoBp
+      BADTCACmsfcVzrWguavsnRsDHZt5XJb0C6/XJwCca/OZjn56ZXegYz8Nq96vzy0QTOMKgKEL
+      m3vK3vnjQMdmdnYl/Wy4A3oBAWDoLnrcxmwmK0MezTdxCwTTCACmEQBMIwCYRgAwjQBgGgHA
+      NK/vAQ5qe7r7rwcqLMyq2XL63tvfGda4gJHwCiAMEnpjY03tVkOzufho/5ZR7ueOyRPH8Yn7
+      87yo2+0ezSmvc93L5568L5BXAFHUUq1a1fLSghqRO9q+IpnkC2UcLwxDr/19EonE0ZzyOjd4
+      +dzgbLdFKRRLKhSf7xx9wedE4JxiEQzTCACmEQBMIwCYRgAw7Ws/JZA78wXnZAAAAABJRU5E
+      rkJggg==
+    </thumbnail>
+    <thumbnail height='192' name='Sheet 2' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAACFUlEQVR4nO3TMQEAIAzAMMC/5yFjRxMFfXpnZg5Eve0A2GQA0gxAmgFIMwBpBiDNAKQZ
+      gDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFI
+      MwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQD
+      kGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBp
+      BiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA
+      0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDN
+      AKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxA
+      mgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZ
+      gDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFI
+      MwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKR9Y+0F
+      fBUOM1sAAAAASUVORK5CYII=
+    </thumbnail>
+  </thumbnails>
+</workbook>

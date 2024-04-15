@@ -1,5 +1,8 @@
 
+library(tidyverse)
 
 data <- read.csv("data/Customer_Dataset_Data.csv", na.strings = "?", stringsAsFactors = F)
 
-dim(data)
+data <- data %>% column_to_rownames(., var = "CustomerID")
+
+

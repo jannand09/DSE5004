@@ -1,0 +1,1590 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20241.24.0308.0326                               -->
+<workbook original-version='18.1' source-build='2024.1.1 (20241.24.0308.0326)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource caption='Customer_Dataset_Data' inline='true' name='federated.0oel9c91wfa98d18bjh6v0lredrd' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Customer_Dataset_Data' name='textscan.0gv8jnu1kdsgiw1fvtx520ylp9y4'>
+            <connection class='textscan' directory='C:/Merrimack/Visual Data Exploration/Module 4' filename='Customer_Dataset_Data.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.0gv8jnu1kdsgiw1fvtx520ylp9y4' name='Customer_Dataset_Data.csv' table='[Customer_Dataset_Data#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='CustomerID' ordinal='0' />
+            <column datatype='integer' name='Region' ordinal='1' />
+            <column datatype='integer' name='TownSize' ordinal='2' />
+            <column datatype='string' name='Gender' ordinal='3' />
+            <column datatype='real' name='Age' ordinal='4' />
+            <column datatype='integer' name='EducationYears' ordinal='5' />
+            <column datatype='string' name='JobCategory' ordinal='6' />
+            <column datatype='string' name='UnionMember' ordinal='7' />
+            <column datatype='integer' name='EmploymentLength' ordinal='8' />
+            <column datatype='string' name='Retired' ordinal='9' />
+            <column datatype='real' name='HHIncome' ordinal='10' />
+            <column datatype='real' name='DebtToIncomeRatio' ordinal='11' />
+            <column datatype='real' name='CreditDebt' ordinal='12' />
+            <column datatype='real' name='OtherDebt' ordinal='13' />
+            <column datatype='string' name='LoanDefault' ordinal='14' />
+            <column datatype='string' name='MaritalStatus' ordinal='15' />
+            <column datatype='integer' name='HouseholdSize' ordinal='16' />
+            <column datatype='integer' name='NumberPets' ordinal='17' />
+            <column datatype='integer' name='NumberCats' ordinal='18' />
+            <column datatype='integer' name='NumberDogs' ordinal='19' />
+            <column datatype='integer' name='NumberBirds' ordinal='20' />
+            <column datatype='integer' name='HomeOwner' ordinal='21' />
+            <column datatype='integer' name='CarsOwned' ordinal='22' />
+            <column datatype='string' name='CarOwnership' ordinal='23' />
+            <column datatype='string' name='CarBrand' ordinal='24' />
+            <column datatype='real' name='CarValue' ordinal='25' />
+            <column datatype='integer' name='CommuteTime' ordinal='26' />
+            <column datatype='string' name='PoliticalPartyMem' ordinal='27' />
+            <column datatype='string' name='Votes' ordinal='28' />
+            <column datatype='string' name='CreditCard' ordinal='29' />
+            <column datatype='integer' name='CardTenure' ordinal='30' />
+            <column datatype='integer' name='CardItemsMonthly' ordinal='31' />
+            <column datatype='real' name='CardSpendMonth' ordinal='32' />
+            <column datatype='string' name='ActiveLifestyle' ordinal='33' />
+            <column datatype='integer' name='PhoneCoTenure' ordinal='34' />
+            <column datatype='real' name='VoiceLastMonth' ordinal='35' />
+            <column datatype='real' name='VoiceOverTenure' ordinal='36' />
+            <column datatype='string' name='EquipmentRental' ordinal='37' />
+            <column datatype='string' name='EquipmentLastMonth' ordinal='38' />
+            <column datatype='string' name='EquipmentOverTenure' ordinal='39' />
+            <column datatype='string' name='CallingCard' ordinal='40' />
+            <column datatype='string' name='WirelessData' ordinal='41' />
+            <column datatype='string' name='DataLastMonth' ordinal='42' />
+            <column datatype='string' name='DataOverTenure' ordinal='43' />
+            <column datatype='string' name='Multiline' ordinal='44' />
+            <column datatype='string' name='VM' ordinal='45' />
+            <column datatype='string' name='Pager' ordinal='46' />
+            <column datatype='string' name='Internet' ordinal='47' />
+            <column datatype='string' name='CallerID' ordinal='48' />
+            <column datatype='string' name='CallWait' ordinal='49' />
+            <column datatype='string' name='CallForward' ordinal='50' />
+            <column datatype='string' name='ThreeWayCalling' ordinal='51' />
+            <column datatype='string' name='EBilling' ordinal='52' />
+            <column datatype='integer' name='TVWatchingHours' ordinal='53' />
+            <column datatype='string' name='OwnsPC' ordinal='54' />
+            <column datatype='string' name='OwnsMobileDevice' ordinal='55' />
+            <column datatype='string' name='OwnsGameSystem' ordinal='56' />
+            <column datatype='string' name='OwnsFax' ordinal='57' />
+            <column datatype='string' name='NewsSubscriber' ordinal='58' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='textscan.0gv8jnu1kdsgiw1fvtx520ylp9y4' name='Customer_Dataset_Data.csv' table='[Customer_Dataset_Data#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='CustomerID' ordinal='0' />
+            <column datatype='integer' name='Region' ordinal='1' />
+            <column datatype='integer' name='TownSize' ordinal='2' />
+            <column datatype='string' name='Gender' ordinal='3' />
+            <column datatype='real' name='Age' ordinal='4' />
+            <column datatype='integer' name='EducationYears' ordinal='5' />
+            <column datatype='string' name='JobCategory' ordinal='6' />
+            <column datatype='string' name='UnionMember' ordinal='7' />
+            <column datatype='integer' name='EmploymentLength' ordinal='8' />
+            <column datatype='string' name='Retired' ordinal='9' />
+            <column datatype='real' name='HHIncome' ordinal='10' />
+            <column datatype='real' name='DebtToIncomeRatio' ordinal='11' />
+            <column datatype='real' name='CreditDebt' ordinal='12' />
+            <column datatype='real' name='OtherDebt' ordinal='13' />
+            <column datatype='string' name='LoanDefault' ordinal='14' />
+            <column datatype='string' name='MaritalStatus' ordinal='15' />
+            <column datatype='integer' name='HouseholdSize' ordinal='16' />
+            <column datatype='integer' name='NumberPets' ordinal='17' />
+            <column datatype='integer' name='NumberCats' ordinal='18' />
+            <column datatype='integer' name='NumberDogs' ordinal='19' />
+            <column datatype='integer' name='NumberBirds' ordinal='20' />
+            <column datatype='integer' name='HomeOwner' ordinal='21' />
+            <column datatype='integer' name='CarsOwned' ordinal='22' />
+            <column datatype='string' name='CarOwnership' ordinal='23' />
+            <column datatype='string' name='CarBrand' ordinal='24' />
+            <column datatype='real' name='CarValue' ordinal='25' />
+            <column datatype='integer' name='CommuteTime' ordinal='26' />
+            <column datatype='string' name='PoliticalPartyMem' ordinal='27' />
+            <column datatype='string' name='Votes' ordinal='28' />
+            <column datatype='string' name='CreditCard' ordinal='29' />
+            <column datatype='integer' name='CardTenure' ordinal='30' />
+            <column datatype='integer' name='CardItemsMonthly' ordinal='31' />
+            <column datatype='real' name='CardSpendMonth' ordinal='32' />
+            <column datatype='string' name='ActiveLifestyle' ordinal='33' />
+            <column datatype='integer' name='PhoneCoTenure' ordinal='34' />
+            <column datatype='real' name='VoiceLastMonth' ordinal='35' />
+            <column datatype='real' name='VoiceOverTenure' ordinal='36' />
+            <column datatype='string' name='EquipmentRental' ordinal='37' />
+            <column datatype='string' name='EquipmentLastMonth' ordinal='38' />
+            <column datatype='string' name='EquipmentOverTenure' ordinal='39' />
+            <column datatype='string' name='CallingCard' ordinal='40' />
+            <column datatype='string' name='WirelessData' ordinal='41' />
+            <column datatype='string' name='DataLastMonth' ordinal='42' />
+            <column datatype='string' name='DataOverTenure' ordinal='43' />
+            <column datatype='string' name='Multiline' ordinal='44' />
+            <column datatype='string' name='VM' ordinal='45' />
+            <column datatype='string' name='Pager' ordinal='46' />
+            <column datatype='string' name='Internet' ordinal='47' />
+            <column datatype='string' name='CallerID' ordinal='48' />
+            <column datatype='string' name='CallWait' ordinal='49' />
+            <column datatype='string' name='CallForward' ordinal='50' />
+            <column datatype='string' name='ThreeWayCalling' ordinal='51' />
+            <column datatype='string' name='EBilling' ordinal='52' />
+            <column datatype='integer' name='TVWatchingHours' ordinal='53' />
+            <column datatype='string' name='OwnsPC' ordinal='54' />
+            <column datatype='string' name='OwnsMobileDevice' ordinal='55' />
+            <column datatype='string' name='OwnsGameSystem' ordinal='56' />
+            <column datatype='string' name='OwnsFax' ordinal='57' />
+            <column datatype='string' name='NewsSubscriber' ordinal='58' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CustomerID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[CustomerID]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>CustomerID</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Region</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Region]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>Region</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TownSize</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[TownSize]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>TownSize</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Gender</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Gender]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>Gender</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Age</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Age]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>Age</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>EducationYears</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[EducationYears]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>EducationYears</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>JobCategory</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[JobCategory]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>JobCategory</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>UnionMember</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[UnionMember]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>UnionMember</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>EmploymentLength</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[EmploymentLength]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>EmploymentLength</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Retired</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Retired]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>Retired</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>HHIncome</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[HHIncome]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>HHIncome</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DebtToIncomeRatio</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[DebtToIncomeRatio]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>DebtToIncomeRatio</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CreditDebt</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[CreditDebt]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>CreditDebt</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>OtherDebt</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[OtherDebt]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>OtherDebt</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LoanDefault</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[LoanDefault]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>LoanDefault</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MaritalStatus</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[MaritalStatus]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>MaritalStatus</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>HouseholdSize</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[HouseholdSize]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>HouseholdSize</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>NumberPets</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[NumberPets]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>NumberPets</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>NumberCats</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[NumberCats]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>NumberCats</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>NumberDogs</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[NumberDogs]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>NumberDogs</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>NumberBirds</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[NumberBirds]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>NumberBirds</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>HomeOwner</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[HomeOwner]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>HomeOwner</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CarsOwned</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[CarsOwned]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>CarsOwned</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CarOwnership</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[CarOwnership]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>CarOwnership</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CarBrand</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[CarBrand]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>CarBrand</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CarValue</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[CarValue]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>CarValue</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CommuteTime</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[CommuteTime]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>CommuteTime</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PoliticalPartyMem</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[PoliticalPartyMem]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>PoliticalPartyMem</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Votes</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Votes]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>Votes</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CreditCard</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[CreditCard]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>CreditCard</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CardTenure</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[CardTenure]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>CardTenure</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CardItemsMonthly</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[CardItemsMonthly]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>CardItemsMonthly</remote-alias>
+            <ordinal>31</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CardSpendMonth</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[CardSpendMonth]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>CardSpendMonth</remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ActiveLifestyle</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ActiveLifestyle]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>ActiveLifestyle</remote-alias>
+            <ordinal>33</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PhoneCoTenure</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[PhoneCoTenure]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>PhoneCoTenure</remote-alias>
+            <ordinal>34</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>VoiceLastMonth</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[VoiceLastMonth]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>VoiceLastMonth</remote-alias>
+            <ordinal>35</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>VoiceOverTenure</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[VoiceOverTenure]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>VoiceOverTenure</remote-alias>
+            <ordinal>36</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>EquipmentRental</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[EquipmentRental]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>EquipmentRental</remote-alias>
+            <ordinal>37</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>EquipmentLastMonth</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[EquipmentLastMonth]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>EquipmentLastMonth</remote-alias>
+            <ordinal>38</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>EquipmentOverTenure</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[EquipmentOverTenure]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>EquipmentOverTenure</remote-alias>
+            <ordinal>39</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CallingCard</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[CallingCard]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>CallingCard</remote-alias>
+            <ordinal>40</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WirelessData</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[WirelessData]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>WirelessData</remote-alias>
+            <ordinal>41</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DataLastMonth</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[DataLastMonth]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>DataLastMonth</remote-alias>
+            <ordinal>42</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DataOverTenure</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[DataOverTenure]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>DataOverTenure</remote-alias>
+            <ordinal>43</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Multiline</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Multiline]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>Multiline</remote-alias>
+            <ordinal>44</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>VM</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[VM]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>VM</remote-alias>
+            <ordinal>45</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Pager</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Pager]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>Pager</remote-alias>
+            <ordinal>46</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Internet</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Internet]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>Internet</remote-alias>
+            <ordinal>47</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CallerID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[CallerID]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>CallerID</remote-alias>
+            <ordinal>48</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CallWait</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[CallWait]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>CallWait</remote-alias>
+            <ordinal>49</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CallForward</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[CallForward]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>CallForward</remote-alias>
+            <ordinal>50</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ThreeWayCalling</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ThreeWayCalling]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>ThreeWayCalling</remote-alias>
+            <ordinal>51</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>EBilling</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[EBilling]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>EBilling</remote-alias>
+            <ordinal>52</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TVWatchingHours</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[TVWatchingHours]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>TVWatchingHours</remote-alias>
+            <ordinal>53</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>OwnsPC</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[OwnsPC]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>OwnsPC</remote-alias>
+            <ordinal>54</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>OwnsMobileDevice</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[OwnsMobileDevice]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>OwnsMobileDevice</remote-alias>
+            <ordinal>55</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>OwnsGameSystem</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[OwnsGameSystem]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>OwnsGameSystem</remote-alias>
+            <ordinal>56</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>OwnsFax</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[OwnsFax]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>OwnsFax</remote-alias>
+            <ordinal>57</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>NewsSubscriber</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[NewsSubscriber]</local-name>
+            <parent-name>[Customer_Dataset_Data.csv]</parent-name>
+            <remote-alias>NewsSubscriber</remote-alias>
+            <ordinal>58</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Active Lifestyle' datatype='string' name='[ActiveLifestyle]' role='dimension' type='nominal' />
+      <column caption='Age (bin)' datatype='integer' name='[Age (bin)]' role='dimension' type='ordinal'>
+        <calculation class='bin' decimals='1' formula='[Age]' peg='0' size='10' />
+      </column>
+      <column datatype='real' name='[Age]' role='measure' type='quantitative' />
+      <column caption='Owns a PC Boolean' datatype='integer' name='[Calculation_434315893788065792]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='if [OwnsPC]=&quot;Yes&quot; then 1 else 0&#13;&#10;END' />
+      </column>
+      <column caption='Call Forward' datatype='string' name='[CallForward]' role='dimension' type='nominal' />
+      <column caption='Call Wait' datatype='string' name='[CallWait]' role='dimension' type='nominal' />
+      <column caption='Caller ID' datatype='string' name='[CallerID]' role='dimension' type='nominal' />
+      <column caption='Calling Card' datatype='string' name='[CallingCard]' role='dimension' type='nominal' />
+      <column caption='Car Brand' datatype='string' name='[CarBrand]' role='dimension' type='nominal' />
+      <column caption='Car Ownership' datatype='string' name='[CarOwnership]' role='dimension' type='nominal' />
+      <column caption='Car Value' datatype='real' name='[CarValue]' role='measure' type='quantitative' />
+      <column caption='Card Items Monthly' datatype='integer' name='[CardItemsMonthly]' role='measure' type='quantitative' />
+      <column caption='Card Spend Month' datatype='real' name='[CardSpendMonth]' role='dimension' type='quantitative' />
+      <column caption='Card Tenure' datatype='integer' name='[CardTenure]' role='measure' type='quantitative' />
+      <column caption='Cars Owned' datatype='integer' name='[CarsOwned]' role='measure' type='quantitative' />
+      <column caption='Commute Time' datatype='integer' name='[CommuteTime]' role='measure' type='quantitative' />
+      <column caption='Credit Card' datatype='string' name='[CreditCard]' role='dimension' type='nominal' />
+      <column caption='Credit Debt' datatype='real' name='[CreditDebt]' role='measure' type='quantitative' />
+      <column caption='Customer ID' datatype='string' name='[CustomerID]' role='dimension' type='nominal' />
+      <column caption='Data Last Month' datatype='string' name='[DataLastMonth]' role='dimension' type='nominal' />
+      <column caption='Data Over Tenure' datatype='string' name='[DataOverTenure]' role='dimension' type='nominal' />
+      <column caption='Debt To Income Ratio' datatype='real' name='[DebtToIncomeRatio]' role='measure' type='quantitative' />
+      <column caption='E Billing' datatype='string' name='[EBilling]' role='dimension' type='nominal' />
+      <column caption='Education Years' datatype='integer' name='[EducationYears]' role='measure' type='quantitative' />
+      <column caption='Employment Length' datatype='integer' name='[EmploymentLength]' role='measure' type='quantitative' />
+      <column caption='Equipment Last Month' datatype='string' name='[EquipmentLastMonth]' role='dimension' type='nominal' />
+      <column caption='Equipment Over Tenure' datatype='string' name='[EquipmentOverTenure]' role='dimension' type='nominal' />
+      <column caption='Equipment Rental' datatype='string' name='[EquipmentRental]' role='dimension' type='nominal' />
+      <column caption='HH Income' datatype='real' name='[HHIncome]' role='measure' type='quantitative' />
+      <column caption='Home Owner' datatype='integer' name='[HomeOwner]' role='measure' type='quantitative' />
+      <column caption='Household Size' datatype='integer' name='[HouseholdSize]' role='measure' type='quantitative' />
+      <column caption='Job Category' datatype='string' name='[JobCategory]' role='dimension' type='nominal' />
+      <column caption='Loan Default' datatype='string' name='[LoanDefault]' role='dimension' type='nominal' />
+      <column caption='Marital Status' datatype='string' name='[MaritalStatus]' role='dimension' type='nominal' />
+      <column caption='News Subscriber' datatype='string' name='[NewsSubscriber]' role='dimension' type='nominal' />
+      <column caption='Number Birds' datatype='integer' name='[NumberBirds]' role='measure' type='quantitative' />
+      <column caption='Number Cats' datatype='integer' name='[NumberCats]' role='measure' type='quantitative' />
+      <column caption='Number Dogs' datatype='integer' name='[NumberDogs]' role='measure' type='quantitative' />
+      <column caption='Number Pets' datatype='integer' name='[NumberPets]' role='measure' type='quantitative' />
+      <column caption='Other Debt' datatype='real' name='[OtherDebt]' role='measure' type='quantitative' />
+      <column caption='Owns Fax' datatype='string' name='[OwnsFax]' role='dimension' type='nominal' />
+      <column caption='Owns Game System' datatype='string' name='[OwnsGameSystem]' role='dimension' type='nominal' />
+      <column caption='Owns Mobile Device' datatype='string' name='[OwnsMobileDevice]' role='dimension' type='nominal' />
+      <column caption='Owns PC' datatype='string' name='[OwnsPC]' role='dimension' type='nominal' />
+      <column caption='Phone Co Tenure' datatype='integer' name='[PhoneCoTenure]' role='measure' type='quantitative' />
+      <column caption='Political Party Mem' datatype='string' name='[PoliticalPartyMem]' role='dimension' type='nominal' />
+      <column caption='TV Watching Hours' datatype='integer' name='[TVWatchingHours]' role='measure' type='quantitative' />
+      <column caption='Three Way Calling' datatype='string' name='[ThreeWayCalling]' role='dimension' type='nominal' />
+      <column caption='Town Size' datatype='integer' name='[TownSize]' role='measure' type='quantitative' />
+      <column caption='Union Member' datatype='string' name='[UnionMember]' role='dimension' type='nominal' />
+      <column caption='Voice Last Month' datatype='real' name='[VoiceLastMonth]' role='dimension' type='quantitative' />
+      <column caption='Voice Over Tenure' datatype='real' name='[VoiceOverTenure]' role='measure' type='quantitative' />
+      <column caption='Wireless Data' datatype='string' name='[WirelessData]' role='dimension' type='nominal' />
+      <_.fcp.ObjectModelTableType.true...column caption='Customer_Dataset_Data.csv' datatype='table' name='[__tableau_internal_object_id__].[Customer_Dataset_Data.csv_BC4D08B2DE6C46CD96129B3CDB31D65E]' role='measure' type='quantitative' />
+      <column-instance column='[Age]' derivation='Count' name='[cnt:Age:qk]' pivot='key' type='quantitative' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oel9c91wfa98d18bjh6v0lredrd].[cnt:Age:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.0oel9c91wfa98d18bjh6v0lredrd]&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <field-sort-info field-sort-order-type='custom-order'>
+        <field-sort-custom-order field='CustomerID' />
+        <field-sort-custom-order field='Region' />
+        <field-sort-custom-order field='TownSize' />
+        <field-sort-custom-order field='Gender' />
+        <field-sort-custom-order field='Age' />
+        <field-sort-custom-order field='EducationYears' />
+        <field-sort-custom-order field='JobCategory' />
+        <field-sort-custom-order field='UnionMember' />
+        <field-sort-custom-order field='EmploymentLength' />
+        <field-sort-custom-order field='Retired' />
+        <field-sort-custom-order field='HHIncome' />
+        <field-sort-custom-order field='DebtToIncomeRatio' />
+        <field-sort-custom-order field='CreditDebt' />
+        <field-sort-custom-order field='OtherDebt' />
+        <field-sort-custom-order field='LoanDefault' />
+        <field-sort-custom-order field='MaritalStatus' />
+        <field-sort-custom-order field='HouseholdSize' />
+        <field-sort-custom-order field='NumberPets' />
+        <field-sort-custom-order field='NumberCats' />
+        <field-sort-custom-order field='NumberDogs' />
+        <field-sort-custom-order field='NumberBirds' />
+        <field-sort-custom-order field='HomeOwner' />
+        <field-sort-custom-order field='CarsOwned' />
+        <field-sort-custom-order field='CarOwnership' />
+        <field-sort-custom-order field='CarBrand' />
+        <field-sort-custom-order field='CarValue' />
+        <field-sort-custom-order field='CommuteTime' />
+        <field-sort-custom-order field='PoliticalPartyMem' />
+        <field-sort-custom-order field='Votes' />
+        <field-sort-custom-order field='CreditCard' />
+        <field-sort-custom-order field='CardTenure' />
+        <field-sort-custom-order field='CardItemsMonthly' />
+        <field-sort-custom-order field='CardSpendMonth' />
+        <field-sort-custom-order field='ActiveLifestyle' />
+        <field-sort-custom-order field='PhoneCoTenure' />
+        <field-sort-custom-order field='VoiceLastMonth' />
+        <field-sort-custom-order field='VoiceOverTenure' />
+        <field-sort-custom-order field='EquipmentRental' />
+        <field-sort-custom-order field='EquipmentLastMonth' />
+        <field-sort-custom-order field='EquipmentOverTenure' />
+        <field-sort-custom-order field='CallingCard' />
+        <field-sort-custom-order field='WirelessData' />
+        <field-sort-custom-order field='DataLastMonth' />
+        <field-sort-custom-order field='DataOverTenure' />
+        <field-sort-custom-order field='Multiline' />
+        <field-sort-custom-order field='VM' />
+        <field-sort-custom-order field='Pager' />
+        <field-sort-custom-order field='Internet' />
+        <field-sort-custom-order field='CallerID' />
+        <field-sort-custom-order field='CallWait' />
+        <field-sort-custom-order field='CallForward' />
+        <field-sort-custom-order field='ThreeWayCalling' />
+        <field-sort-custom-order field='EBilling' />
+        <field-sort-custom-order field='TVWatchingHours' />
+        <field-sort-custom-order field='OwnsPC' />
+        <field-sort-custom-order field='Calculation_434315893788065792' />
+        <field-sort-custom-order field='OwnsMobileDevice' />
+        <field-sort-custom-order field='OwnsGameSystem' />
+        <field-sort-custom-order field='OwnsFax' />
+        <field-sort-custom-order field='NewsSubscriber' />
+        <field-sort-custom-order field='Geometry (generated)' />
+        <field-sort-custom-order field='Latitude (generated)' />
+        <field-sort-custom-order field='Longitude (generated)' />
+        <field-sort-custom-order field='Age (bin)' />
+        <field-sort-custom-order field=':Measure Names' />
+        <field-sort-custom-order field='Multiple Values' />
+      </field-sort-info>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='Customer_Dataset_Data.csv' id='Customer_Dataset_Data.csv_BC4D08B2DE6C46CD96129B3CDB31D65E'>
+            <properties context=''>
+              <relation connection='textscan.0gv8jnu1kdsgiw1fvtx520ylp9y4' name='Customer_Dataset_Data.csv' table='[Customer_Dataset_Data#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='string' name='CustomerID' ordinal='0' />
+                  <column datatype='integer' name='Region' ordinal='1' />
+                  <column datatype='integer' name='TownSize' ordinal='2' />
+                  <column datatype='string' name='Gender' ordinal='3' />
+                  <column datatype='real' name='Age' ordinal='4' />
+                  <column datatype='integer' name='EducationYears' ordinal='5' />
+                  <column datatype='string' name='JobCategory' ordinal='6' />
+                  <column datatype='string' name='UnionMember' ordinal='7' />
+                  <column datatype='integer' name='EmploymentLength' ordinal='8' />
+                  <column datatype='string' name='Retired' ordinal='9' />
+                  <column datatype='real' name='HHIncome' ordinal='10' />
+                  <column datatype='real' name='DebtToIncomeRatio' ordinal='11' />
+                  <column datatype='real' name='CreditDebt' ordinal='12' />
+                  <column datatype='real' name='OtherDebt' ordinal='13' />
+                  <column datatype='string' name='LoanDefault' ordinal='14' />
+                  <column datatype='string' name='MaritalStatus' ordinal='15' />
+                  <column datatype='integer' name='HouseholdSize' ordinal='16' />
+                  <column datatype='integer' name='NumberPets' ordinal='17' />
+                  <column datatype='integer' name='NumberCats' ordinal='18' />
+                  <column datatype='integer' name='NumberDogs' ordinal='19' />
+                  <column datatype='integer' name='NumberBirds' ordinal='20' />
+                  <column datatype='integer' name='HomeOwner' ordinal='21' />
+                  <column datatype='integer' name='CarsOwned' ordinal='22' />
+                  <column datatype='string' name='CarOwnership' ordinal='23' />
+                  <column datatype='string' name='CarBrand' ordinal='24' />
+                  <column datatype='real' name='CarValue' ordinal='25' />
+                  <column datatype='integer' name='CommuteTime' ordinal='26' />
+                  <column datatype='string' name='PoliticalPartyMem' ordinal='27' />
+                  <column datatype='string' name='Votes' ordinal='28' />
+                  <column datatype='string' name='CreditCard' ordinal='29' />
+                  <column datatype='integer' name='CardTenure' ordinal='30' />
+                  <column datatype='integer' name='CardItemsMonthly' ordinal='31' />
+                  <column datatype='real' name='CardSpendMonth' ordinal='32' />
+                  <column datatype='string' name='ActiveLifestyle' ordinal='33' />
+                  <column datatype='integer' name='PhoneCoTenure' ordinal='34' />
+                  <column datatype='real' name='VoiceLastMonth' ordinal='35' />
+                  <column datatype='real' name='VoiceOverTenure' ordinal='36' />
+                  <column datatype='string' name='EquipmentRental' ordinal='37' />
+                  <column datatype='string' name='EquipmentLastMonth' ordinal='38' />
+                  <column datatype='string' name='EquipmentOverTenure' ordinal='39' />
+                  <column datatype='string' name='CallingCard' ordinal='40' />
+                  <column datatype='string' name='WirelessData' ordinal='41' />
+                  <column datatype='string' name='DataLastMonth' ordinal='42' />
+                  <column datatype='string' name='DataOverTenure' ordinal='43' />
+                  <column datatype='string' name='Multiline' ordinal='44' />
+                  <column datatype='string' name='VM' ordinal='45' />
+                  <column datatype='string' name='Pager' ordinal='46' />
+                  <column datatype='string' name='Internet' ordinal='47' />
+                  <column datatype='string' name='CallerID' ordinal='48' />
+                  <column datatype='string' name='CallWait' ordinal='49' />
+                  <column datatype='string' name='CallForward' ordinal='50' />
+                  <column datatype='string' name='ThreeWayCalling' ordinal='51' />
+                  <column datatype='string' name='EBilling' ordinal='52' />
+                  <column datatype='integer' name='TVWatchingHours' ordinal='53' />
+                  <column datatype='string' name='OwnsPC' ordinal='54' />
+                  <column datatype='string' name='OwnsMobileDevice' ordinal='55' />
+                  <column datatype='string' name='OwnsGameSystem' ordinal='56' />
+                  <column datatype='string' name='OwnsFax' ordinal='57' />
+                  <column datatype='string' name='NewsSubscriber' ordinal='58' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Age by Town Size and Retired Status'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Customer_Dataset_Data' name='federated.0oel9c91wfa98d18bjh6v0lredrd' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0oel9c91wfa98d18bjh6v0lredrd'>
+            <column caption='Age (bin)' datatype='integer' name='[Age (bin)]' role='dimension' type='ordinal'>
+              <calculation class='bin' decimals='1' formula='[Age]' peg='0' size='10' />
+            </column>
+            <column datatype='real' name='[Age]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Retired]' role='dimension' type='nominal' />
+            <column caption='Town Size' datatype='integer' name='[TownSize]' role='measure' type='quantitative' />
+            <column-instance column='[Age]' derivation='Count' name='[cnt:Age:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Age (bin)]' derivation='None' name='[none:Age (bin):ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Retired]' derivation='None' name='[none:Retired:nk]' pivot='key' type='nominal' />
+            <column-instance column='[TownSize]' derivation='None' name='[none:TownSize:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0oel9c91wfa98d18bjh6v0lredrd].[none:Retired:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.0oel9c91wfa98d18bjh6v0lredrd].[cnt:Age:qk]</rows>
+        <cols>([federated.0oel9c91wfa98d18bjh6v0lredrd].[none:TownSize:ok] / [federated.0oel9c91wfa98d18bjh6v0lredrd].[none:Age (bin):ok])</cols>
+        <show-full-range>
+          <column>[federated.0oel9c91wfa98d18bjh6v0lredrd].[Age (bin)]</column>
+        </show-full-range>
+      </table>
+      <simple-id uuid='{2D7E4156-1124-40DD-882B-5AEBD4F2A505}' />
+    </worksheet>
+    <worksheet name='Retired % by Town Size'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Customer_Dataset_Data' name='federated.0oel9c91wfa98d18bjh6v0lredrd' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0oel9c91wfa98d18bjh6v0lredrd'>
+            <column caption='Customer ID' datatype='string' name='[CustomerID]' role='dimension' type='nominal' />
+            <column caption='Owns PC' datatype='string' name='[OwnsPC]' role='dimension' type='nominal' />
+            <column caption='Town Size' datatype='integer' name='[TownSize]' role='measure' type='quantitative' />
+            <column-instance column='[OwnsPC]' derivation='None' name='[none:OwnsPC:nk]' pivot='key' type='nominal' />
+            <column-instance column='[TownSize]' derivation='None' name='[none:TownSize:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[CustomerID]' derivation='CountD' name='[pcto:ctd:CustomerID:qk:2]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Columns' type='PctTotal' />
+            </column-instance>
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0oel9c91wfa98d18bjh6v0lredrd].[none:OwnsPC:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.0oel9c91wfa98d18bjh6v0lredrd].[pcto:ctd:CustomerID:qk:2]</rows>
+        <cols>[federated.0oel9c91wfa98d18bjh6v0lredrd].[none:TownSize:ok]</cols>
+      </table>
+      <simple-id uuid='{32A20754-4E75-47CF-A13F-6CB9152FA31B}' />
+    </worksheet>
+    <worksheet name='Whisker Plot'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Customer_Dataset_Data' name='federated.0oel9c91wfa98d18bjh6v0lredrd' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0oel9c91wfa98d18bjh6v0lredrd'>
+            <column datatype='real' name='[Age]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Retired]' role='dimension' type='nominal' />
+            <column caption='Town Size' datatype='integer' name='[TownSize]' role='measure' type='quantitative' />
+            <column-instance column='[Retired]' derivation='None' name='[none:Retired:nk]' pivot='key' type='nominal' />
+            <column-instance column='[TownSize]' derivation='None' name='[none:TownSize:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Age]' derivation='Sum' name='[sum:Age:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='false' />
+        </view>
+        <style>
+          <style-rule element='refboxplot'>
+            <format attr='boxplot-style' id='refline0' value='classic-two-tone' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <reference-line axis-column='[federated.0oel9c91wfa98d18bjh6v0lredrd].[sum:Age:qk]' boxplot-mark-exclusion='true' boxplot-whisker-type='standard' enable-instant-analytics='true' formula='average' id='refline0' label-type='automatic' probability='95' scope='per-cell' symmetric='false' value-column='[federated.0oel9c91wfa98d18bjh6v0lredrd].[sum:Age:qk]' z-order='1' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.47176796197891235' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0oel9c91wfa98d18bjh6v0lredrd].[sum:Age:qk]</rows>
+        <cols>([federated.0oel9c91wfa98d18bjh6v0lredrd].[none:Retired:nk] / [federated.0oel9c91wfa98d18bjh6v0lredrd].[none:TownSize:ok])</cols>
+      </table>
+      <simple-id uuid='{6F02DDF8-8B14-45BD-AF93-578B6080DB32}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' name='Whisker Plot' tab-color='#dec77b'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0oel9c91wfa98d18bjh6v0lredrd].[none:Age:qk]</field>
+            <field>[federated.0oel9c91wfa98d18bjh6v0lredrd].[none:Retired:nk]</field>
+            <field>[federated.0oel9c91wfa98d18bjh6v0lredrd].[sum:Age:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{339294A4-33A0-4C15-A3B2-E39C7E0F23B4}' />
+    </window>
+    <window class='worksheet' name='Age by Town Size and Retired Status' tab-color='#dec77b'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0oel9c91wfa98d18bjh6v0lredrd].[none:Retired:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0oel9c91wfa98d18bjh6v0lredrd].[none:Age (bin):ok]</field>
+            <field>[federated.0oel9c91wfa98d18bjh6v0lredrd].[none:Retired:nk]</field>
+            <field>[federated.0oel9c91wfa98d18bjh6v0lredrd].[none:TownSize:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{9BBD164B-725A-4AF8-9C23-D6A9833ADBE4}' />
+    </window>
+    <window class='worksheet' maximized='true' name='Retired % by Town Size' tab-color='#dec77b'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='1' param='[federated.0oel9c91wfa98d18bjh6v0lredrd].[none:OwnsPC:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0oel9c91wfa98d18bjh6v0lredrd].[none:OwnsFax:nk]</field>
+            <field>[federated.0oel9c91wfa98d18bjh6v0lredrd].[none:OwnsPC:nk]</field>
+            <field>[federated.0oel9c91wfa98d18bjh6v0lredrd].[none:TownSize:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{6372C843-B6C6-4303-AD75-EDA0652F1CBA}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Age by Town Size and Retired Status' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='192' name='Retired % by Town Size' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='192' name='Whisker Plot' width='192'>
+      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
+      /R/zpb0y3L4f3gAAAABJRU5ErkJggg==
+    </thumbnail>
+  </thumbnails>
+</workbook>

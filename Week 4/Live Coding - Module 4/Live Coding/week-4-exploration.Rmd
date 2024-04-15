@@ -1,0 +1,215 @@
+---
+title: "Week 4 - Filling in Values"
+author: "Chris Healey"
+output:
+  html_document:
+    toc: true
+    theme: united
+---
+
+# Introduction
+
+This week, we'll be working with a US Higher Education dataset.
+
+The main objectives we will cover will be:
+
+-   filtering columns
+-   handling different types of "NA" values
+-   correcting the types for columns after ingestion
+
+# Import Data
+
+Source: <https://data.ed.gov/dataset/college-scorecard-all-data-files-through-6-2020/resources> (retrieved November 16, 2021)
+
+## Import each file
+
+```{r}
+library(tidyverse)
+library(stringr)
+library(skimr)
+df = read_csv("data/MERGED2019_20_PP.csv")
+dictionary = read_csv("data/collegescorecarddatadictionary.csv")
+```
+
+# Filtering columns
+
+My aim is not to create an exhaustive list of all of the operations you might require, but to make sure that you have a few different code examples to use in your projects
+
+## Creating new columns
+
+We talked about assigning columns and using the `mutate` function back in week one.
+
+```{r}
+# if you look in the dictionary you'll see that the value "30" for column "RELAFFIL" denotes a college with a Catholic affiliation
+df$catholic <- ifelse(df$RELAFFIL=="30",TRUE,FALSE)
+sum(df$catholic)
+```
+
+```{r}
+df <- df %>% mutate(catholic = ifelse(RELAFFIL=="30",TRUE,FALSE))
+sum(df$catholic)
+```
+
+## Removing columns
+
+```{r}
+df_test <- df
+df_test$PCIP01 <- NULL
+df_test[c("PCIP02","PCIP03")] <-NULL
+```
+
+## Examples for filtering columns
+
+A great alternative to choose (or drop) columns (subsets of your original data) is using the `select()` function from `dplyr`. Note `select` also can be used to reorder the columns within your dataframe, something I find useful before exporting.
+
+### By type
+
+```{r}
+df_test <- df %>% select(INSTNM)     #  Conversely, use select(!INSTNM) to select ALL BUT INSTNM
+print(df_test)
+```
+
+```{r}
+df_test <- df %>% select(where(is.character))    #  Select all columns with a type character string   -- Do note "ZIP", "HBCU" flag (0/1) are character strings...
+print(df_test)
+```
+
+```{r}
+df_test <- df %>% select_if(is.numeric)    #  Select all columns with a type numeric
+print(df_test)
+```
+
+### By name
+
+```{r}
+df_test <- df %>% select(UNITID,OPEID,INSTNM) 
+print(df_test)
+```
+
+```{r}
+df_test <- df %>% select(c("UNITID","OPEID","INSTNM")) 
+print(df_test)
+```
+
+### By string
+
+In many cases, you may want to manipulate or filter out columns that start with, end with, or contain strings. Use the `stringr` functions `starts_with()`, `ends_with()`, or `contains()`.
+
+```{r}
+df_test <- df %>% select(contains("SAT"))   # Select all columns with a particular string, "SAT" here.
+print(df_test)
+```
+
+Combinations can also work:
+
+```{r}
+df_test <- df %>% select(     c("UNITID","OPEID","INSTNM")  |  contains("SAT")   )   #  Part of a list or start with a particular string
+print(df_test)
+```
+
+### By value
+
+I want to share two cases for values. First we will search for all columns which feature a specific value. For you, it could be all "0" or all "NULL".
+
+```{r}
+not_all_null_string <- function(x){    ! all(  ifelse(x=="NULL",TRUE,FALSE) )  }    #   ALL columns that do NOT have "NULL"  (different from 'NA'...)   true? **
+df_test %>% select_if(not_all_null_string)                                          #    All() = Are all values TRUE?  //   Any() = Are there any TRUE?
+
+```
+
+
+
+
+We haven't corrected all of the "NULL" strings, so I will provide a code that checks `NA` as opposed to "NULL".
+
+```{r}
+not_all_na <- function(x){   !all(is.na(x))   }    #  Look for true NA (missing values), not just character string "NULL"
+df_test %>% select_if(not_all_na)
+```
+
+# Looking through the data
+
+```{r}
+df_test %>% skim()
+```
+
+As you can see, there's a lot of information that should be numeric here, but `read_csv` isn't handling "NULL" correctly.
+
+## Fixing NULLs
+
+We have a couple of options.
+
+### Correct at ingestion
+
+```{r}
+df_null = read_csv("data/MERGED2019_20_PP.csv", na=c("","na","NULL", "NA", "N/A", "null"))
+df_null_test <- df_null %>% select(c("UNITID","OPEID","INSTNM")|contains("SAT")) 
+df_null_test %>% skim()
+```
+
+### Correct NULL and then re-run type assignment
+
+```{r}
+df_rewrite_test = df_test
+df_rewrite_test = type_convert(df_rewrite_test)         # type_convert = Re-convert character columns in existing data frame
+df_rewrite_test[df_rewrite_test == "NULL"] <- NA
+df_rewrite_test = type_convert(df_rewrite_test)         # type_convert = Re-convert character columns in existing data frame
+```
+
+### Apply `parse_integer` on each column
+
+Not a great solution, but can work for small cases...
+
+```{r}
+df_parse_test = df_test
+df_parse_test$SATVR25 = parse_integer(    df_test$SATVR25, na=c("NULL")    )    #   parse_integer() = Transforms any text column that looks like an integer into an integer
+summary(df_parse_test$SATVR25)
+```
+
+# A visualization with GGPLOT
+
+```{r}
+library(ggplot2)
+g<-ggplot(data=df) +
+  geom_point(aes(x=parse_double(ADM_RATE),y=parse_double(AVGFACSAL))) + 
+  xlab("Admission Rate") +
+  ylab("Avg. Faculty Salary per Month ($)") +
+  ggtitle("Faculty Salary vs Admission Rate")
+print(g)
+```
+
+
+
+# A visualization augmented with Plotly
+
+
+```{r}
+library(plotly)
+library(ggplot2)
+df_small <- df %>% select(ADM_RATE,AVGFACSAL,STABBR,INSTNM) %>% 
+  mutate(ADM_RATE = parse_double(ADM_RATE),AVGFACSAL = parse_double(AVGFACSAL)) %>% 
+  filter(STABBR == "MA")
+
+g<-ggplot(data=df_small) +
+  geom_point(aes(x=ADM_RATE,y=AVGFACSAL,text=INSTNM)) + 
+  xlab("Admission Rate") +
+  ylab("Avg. Faculty Salary per Month ($)") +
+  ggtitle("Faculty Salary vs Admission Rate")
+ggplotly(g, tooltip = "INSTNM")
+```
+
+
+
+
+```{r}
+df_small <- df %>% select(ADM_RATE,AVGFACSAL,STABBR,INSTNM,CONTROL) %>% 
+  mutate(ADM_RATE = parse_double(ADM_RATE),AVGFACSAL = parse_double(AVGFACSAL)) %>% 
+  filter(STABBR == "MA")
+
+g<-ggplot(data=df_small) +
+  geom_point(aes(x=ADM_RATE,y=AVGFACSAL,text=INSTNM, color=as.factor(CONTROL))) + 
+  xlab("Admission Rate") +
+  ylab("Avg. Faculty Salary per Month ($)") +
+  ggtitle("Faculty Salary vs Admission Rate") 
+ggplotly(g, tooltip = "INSTNM")
+```

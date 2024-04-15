@@ -1,0 +1,68 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library(tidyverse)
+
+post_offices <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-04-13/post_offices.csv')
+post_offices <- post_offices %>% mutate(current_with_loc = ifelse(is.na(discontinued) & !is.na(latitude) & !is.na(longitude),TRUE,FALSE)) %>% filter(current_with_loc & state=="MA")
+```
+
+```{r}
+ma_counties <- map_data("county", "massachusetts") %>% 
+  select(lon = long, lat, group, id = subregion)
+print(ma_counties)
+```
+
+
+```{r}
+library(ggplot2)
+g <- ggplot(ma_counties, aes(lon, lat, group = group)) +
+  geom_polygon(fill = "#42cef5", colour = "white") + 
+  coord_quickmap()
+print(g)
+
+```
+
+
+```{r}
+library(ggplot2)
+library(ggthemes)
+
+ma_post_office_by_county = post_offices %>% group_by(county1) %>% summarize(num_po = n()) %>% mutate(county1 = tolower(county1))
+ma_counties <- map_data("county", "massachusetts") %>% 
+  select(lon = long, lat, group, id = subregion)
+ma_counties <- ma_counties %>% inner_join(ma_post_office_by_county, by = c("id"="county1"))
+
+g <- ggplot(ma_counties, aes(lon, lat, group = group)) +
+  geom_polygon(aes(fill = num_po), colour = "white") + 
+  coord_quickmap()+
+  theme_map()+
+  ggtitle("Number of Post Offices per County in MA")
+
+print(g)
+```
+```{r}
+library(ggplot2)
+library(ggthemes)
+
+ma_post_office_by_county = post_offices %>% group_by(county1) %>% summarize(num_po = n()) %>% mutate(county1 = tolower(county1))
+ma_counties <- map_data("county", "massachusetts") %>% 
+  select(lon = long, lat, group, id = subregion)
+ma_counties <- ma_counties %>% 
+  inner_join(ma_post_office_by_county, by = c("id"="county1")) %>%
+  group_by(id) %>% mutate(lon_avg=mean(lon), lat_avg=mean(lat))
+
+g <- ggplot(ma_counties, aes(lon, lat, group = group)) +
+  geom_polygon(aes(fill = num_po), colour = "white") + 
+  geom_text(aes(x=lon_avg, y=lat_avg, label=num_po), color="white")+
+  coord_quickmap()+
+  theme_map()+
+  ggtitle("Number of Post Offices per County in MA")
+
+print(g)
+```
+
+

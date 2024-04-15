@@ -1,0 +1,101 @@
+
+
+# Loading the time-series document
+```{r}
+library(tidyverse)
+library(lubridate)
+library(ggplot2)
+```
+
+```{r}
+df <- read_csv("data/grocery_timestamp.csv")
+```
+
+Questions:
+- How could you detect any issue with the ingestion?
+- What could we do to solve this?
+
+## Possible solution
+```{r}
+# using csv2 since the data is separated by ;
+df <- read_csv2("data/grocery_timestamp.csv")
+```
+
+
+## Check timestamp column
+
+## Use `lubridate` to process timestamp columns
+```{r}
+df$finish_hour <- lubridate::hour(df$finish_service_time)
+df$pickup_hour <- lubridate::hour(df$pickup_timestamp)
+```
+
+
+# Analysis for this dataset
+
+While I'm going to create pictures and analysis on hourly breakdowns, the same analysis could be repeated for months and years.
+
+## Column Sums
+```{r}
+col_sums <- df %>% select(!c(order_id,pay_method,order_hour_of_day,days_since_prior_order,finish_hour,pickup_hour)) %>% summarise(across(where(is.numeric), ~ sum(.x, na.rm = TRUE))) 
+col_sums <- col_sums %>% pivot_longer(everything(),names_to = "item",values_to = "total_purchased") %>% arrange(desc(total_purchased))
+print(col_sums)
+```
+
+
+## Histograms
+
+```{r}
+summary <- df %>% group_by(pickup_hour) %>% summarize(value = sum(`baby food formula`))
+print(summary)
+g <- ggplot(data=df) + geom_histogram(aes(x=finish_hour), binwidth=1)
+print(g)
+```
+
+```{r}
+baby_food = df[df$`baby food formula`>0,]
+g <- ggplot(data=df) + geom_histogram(aes(x=finish_hour,y = stat(count) / sum(count)), bins = 24,alpha=0.5) + geom_histogram(data=baby_food,aes(x=finish_hour,y = stat(count) / sum(count)), bins = 24,alpha=0.5,fill="red") +scale_y_continuous(labels = scales::percent)
+print(g)
+```
+
+```{r}
+item = df[df$`ice cream ice`>0,]
+g <- ggplot(data=df) + geom_histogram(aes(x=finish_hour,y = stat(count) / sum(count)), bins = 24,alpha=0.5) + geom_histogram(data=item,aes(x=finish_hour,y = stat(count) / sum(count)), bins = 24,alpha=0.5,fill="blue") +scale_y_continuous(labels = scales::percent)
+print(g)
+```
+
+# Inspecting orders patterns
+```{r}
+live_orders <- df %>% select(`arrival_ timestamp`,`finish_service_time`)
+live_orders$open <- 1
+live_orders$closed <- -1
+
+open_orders <- live_orders %>% select(`arrival_ timestamp`,open) %>% rename(timestamp=`arrival_ timestamp`)%>% rename(value = open)
+
+closed_orders <- live_orders %>% select(`finish_service_time`,closed) %>% rename(timestamp=`finish_service_time`)%>% rename(value = closed)
+
+
+orders <- rbind(open_orders,closed_orders) %>% arrange(timestamp)
+orders$open_orders <- cumsum(orders$value)
+print(orders)
+```
+```{r}
+g <- ggplot(data=orders) + geom_line(aes(x=timestamp,y=open_orders))
+print(g)
+```
+## Autocorrelation test
+```{r}
+order_summary <- orders %>% mutate(hour = hour(timestamp)) %>% group_by(hour) %>% summarize(mean_value = mean(value))
+#convert to time-series object
+
+order_vec <- as.vector(as.numeric(order_summary$mean_value))
+autocorrelation <- acf(x=order_vec, lag.max=8, plot=FALSE)
+```
+
+```{r}
+g <- ggplot() + geom_col(aes(x=autocorrelation$lag,y=autocorrelation$acf))
+print(g)
+```
+
+
+
