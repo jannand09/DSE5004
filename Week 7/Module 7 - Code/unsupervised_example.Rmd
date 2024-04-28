@@ -1,0 +1,150 @@
+---
+title: "Week 7 - Unsupervised Clustering for Segmentation"
+author: "Chris Healey"
+output:
+  html_document:
+    toc: true
+    theme: united
+---
+
+I want to use a common ML dataset, Titanic passengers, for our examples this week.
+
+Our main goal is to identify characteristics of passenger survival using unsupervised clustering.
+
+- introducing k-means clustering methods and issues    
+- interpretation of these result of this clustering
+
+We'll take a look at supervised methods in another notebook.
+
+# k-means clustering
+In this section, we try to identify clusters based on K-Means clustering.  
+
+## Data setup
+It's important to note that K-Means works on real-valued and non-binary variables.  Additionally, k-means clustering tends to work a little better on normalized variables.  As long as every column is numeric, we can normalize each column using the `scale` function.
+
+```{r}
+library(tidyverse)
+
+#load data
+df <- read_csv("data/titanic.csv")
+```
+
+
+```{r}
+#encode the variable for sex
+df$Female = ifelse(df$Sex=="female",1,0)
+
+#create new dataframe with only numeric columns
+#drop character variables
+points <- df %>% select(-c("Name","Sex"))
+print(head(points))
+```
+
+
+```{r}
+points <- scale(points)
+print(head(points))
+```
+
+## k-means Basics
+We have to specify the number of clusters ahead of time, but the method is relatively easy to run.
+```{r}
+#set seed for code reproducibility
+set.seed(1223)
+NUM_CLUSTERS <- 6
+kclust <- kmeans(points, centers = NUM_CLUSTERS)
+
+#add segments to original dataset
+df$kmeans_segment <- as.factor(kclust$cluster)
+
+print(df %>% relocate(kmeans_segment))
+```
+
+## Choosing a good number of clusters
+We may want to investigate how the total within cluster variation changes as we increase the number of segments.
+```{r}
+ks <- 1:12
+tot_within_ss <- sapply(ks, function(k) {
+    set.seed(1223)
+    cl <- kmeans(points, k)
+    cl$tot.withinss
+})
+plot(ks, tot_within_ss, type = "b")
+```
+Remember we want be able to keep the number of clusters as small as possible while still providing insights!
+
+# Interpretations and Visualizations
+
+Based on the graph above, I'm going to set the number of clusters equal to 5 and 6 ... and something interesting and illustrative of cluster analysis is going to happen....
+```{r}
+set.seed(1223)
+NUM_CLUSTERS <- 5
+kclust <- kmeans(points, centers = NUM_CLUSTERS, nstart=10)
+
+#add segments to original dataset
+df$kmeans_segment <- as.factor(kclust$cluster)
+
+```
+
+## Segment profiles
+For the segment profiles, I summarize the results of each segment (using the original dataset columns -- without the scaling).
+
+```{r}
+df %>% select(-c("Name","Sex")) %>% add_count(kmeans_segment) %>%
+  group_by(kmeans_segment,n) %>% 
+  summarise_all("mean")
+```
+
+Altogether, we do this in one piece of code
+```{r}
+set.seed(1223)
+NUM_CLUSTERS <- 6
+points <- df %>% select(-c("Name","Sex","kmeans_segment"))
+points <- scale(points)
+kclust <- kmeans(points, centers = NUM_CLUSTERS, nstart = 10)
+
+#add segments to original dataset
+df$kmeans_segment <- as.factor(kclust$cluster)
+
+df %>% select(-c("Name","Sex")) %>% add_count(kmeans_segment) %>%
+  group_by(kmeans_segment,n) %>% 
+  summarise_all("mean")
+
+```
+## Example 2-D Visualization
+Here's visualization of the segments featuring two real-valued variables.
+```{r}
+g <- ggplot(df)+geom_point(aes(x=Fare,y=Age,colour=kmeans_segment)) +scale_x_continuous(trans='log10')
+print(g)
+```
+This picture is a little muddy because we didn't train the model on these variables (we trained it on all columns)
+
+
+
+
+
+
+
+## Another approach
+Just because we have all columns available, we don't necessarily have to use them.  For example, maybe we want to investigate `fare` and `age` alone.
+```{r}
+set.seed(1223)
+points <- df %>% select(Age,Fare)
+points <- scale(points)
+kclust <- kmeans(points, centers = NUM_CLUSTERS, nstart = 10)
+
+#add segments to original dataset
+df$kmeans_segment <- as.factor(kclust$cluster)
+
+df %>% select(-c("Name","Sex")) %>% 
+  group_by(kmeans_segment) %>% 
+  summarise_all("mean")
+```
+
+
+```{r}
+g <- ggplot(df)+geom_point(aes(x=Fare,y=Age,colour=kmeans_segment))+scale_x_continuous(trans='log10')
+print(g)
+
+```
+

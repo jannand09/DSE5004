@@ -1,0 +1,156 @@
+---
+title: "Week 7 - Supervised Clustering for Segmentation"
+author: "Chris Healey"
+output:
+  html_document:
+    toc: true
+    theme: united
+---
+
+Our main goal is to identify characteristics of passenger survival using supervised clustering.
+
+In this notebook, we will:
+
+- introduce a simple CART tree    
+- interpret of these result of this somewhat manual process 
+- discuss other methods
+
+For supervised learning, you must have a target variable.  In the simplest case, we will use a binary variable -- whether a passenger survived or not, but for your explorations you may use either a raw or derived, continuous or binary, variable (like value).
+
+
+# CART Tree
+
+```{r message=FALSE, warning=FALSE, echo=FALSE}
+library(rpart)
+library(rpart.plot)
+library(tidyverse)
+
+#load data
+df <- read_csv("data/titanic.csv")
+set.seed(123)
+
+#create classes of fares (for easy classification and limited nodes)
+df$FareClass <- ifelse(df$Fare<30,"Low",ifelse(df$Fare<75,"Medium","High"))
+df$Women <- ifelse(df$Sex=="female",1,0)
+
+df <- df %>% rename(Siblings=`Siblings/Spouses Aboard`,Parents=`Parents/Children Aboard`)
+
+```
+
+## Tree visualization
+```{r message=FALSE, warning=FALSE}
+# create cart tree
+tree <- rpart(Survived ~ Pclass + Sex + FareClass, data =df, control = rpart.control(cp = 0.0001))
+bestcp <- tree$cptable[which.min(tree$cptable[,"xerror"]),"CP"]
+tree.pruned <- prune(tree, cp = bestcp)
+
+# visualize tree
+prp(tree, faclen = 0, cex = 0.8, extra = 1)
+```
+
+## Profiling 
+
+### Segments developed
+
+1. Men 
+2. Women + Low passenger class + low fare
+3. Women + Low passenger class + medium fare
+4. Women + High passenger class
+
+### Profiles
+  
+```{r}
+df$CARTsegments <- ifelse(df$Sex=="male",1,  0)
+df$CARTsegments <- ifelse(df$Sex=="female",2,   df$CARTsegments)
+df$CARTsegments <- ifelse(df$Sex=="female" & df$Pclass>=3 & df$FareClass == "Medium",3,    df$CARTsegments)
+df$CARTsegments <- ifelse(df$Sex=="female" & df$Pclass<3,     4,df$CARTsegments)
+df$CARTsegments <- as.factor(df$CARTsegments)
+
+
+df %>% select(-c("Name","Sex")) %>%  add_count(CARTsegments) %>%
+  group_by(CARTsegments,n) %>% 
+  summarise_all("mean")
+```
+
+### 2D Visualization
+```{r}
+library(ggplot2)
+g <- ggplot(df)+geom_point(aes(x=Fare,y=Age,colour=CARTsegments))
+print(g)
+```
+
+### 2D Visualization -- don't underestimate log scales!
+```{r}
+g <- ggplot(df)  +geom_point( aes(x=Fare,y=Age,colour=CARTsegments) ) +scale_x_continuous(trans='log10')
+print(g)
+```
+
+
+
+
+
+# Logistic Regression
+In this example, we will predict the probability of surviving and then break down the predictions into bins.
+```{r}
+df <- read_csv("data/titanic.csv")
+df$Women <- ifelse(df$Sex=="female",1,0)
+df <- df %>% rename(Siblings=`Siblings/Spouses Aboard`,Parents=`Parents/Children Aboard`)
+
+df_log = df
+mylogit <- glm(Survived ~ Pclass + Women + Age + Fare + Siblings+Parents, data = df_log, family = "binomial")
+df_log$probSurvival <- predict(mylogit, newdata = df_log, type = "response")
+```
+```{r}
+g <- ggplot(df_log) + geom_histogram(aes(x=probSurvival))
+print(g)
+```
+
+
+Assign probability predictions to bins using `cut`:
+```{r}
+df_log$probGroups <- cut(df_log$probSurvival, breaks=c(0.0,0.33, 0.66,1.0), labels=c("Low","Medium","High"))
+```
+
+Create profiles based on the bins:
+```{r}
+df_log %>% select(-c("Name","Sex")) %>%  add_count(probGroups) %>%
+  group_by(probGroups, n) %>% 
+  summarise_all("mean")
+```
+
+
+
+
+
+
+# Random Forests
+
+Creating the model using the `randomForest` package:
+```{r}
+library(randomForest)
+df_rf = df
+df_rf$Survived = as.factor(df_rf$Survived)
+myrf <- randomForest(Survived ~ Pclass + Women + Age + Fare + Siblings + Parents, data = df_rf, importance=TRUE, proximity=TRUE)
+df_rf$probSurvival <- predict(myrf, newdata = df_rf, type="prob")[,2]
+```
+Of course, there are a lot of good discussions about using random forests for classification.
+
+```{r}
+g <- ggplot(df_rf) + geom_histogram(aes(x=probSurvival))
+print(g)
+```
+
+Creating the bins again:
+```{r}
+tol = 0.0001 # small tolerance because RF will predict exactly 0 and 1 
+df_rf$probGroups <- cut(df_rf$probSurvival, breaks=c(0.00-tol,0.33, 0.66,1.00+tol), labels=c("Low","Medium","High"))
+```
+
+
+Notice that the bins and their profiles are slightly different
+```{r}
+df_rf$Survived <- as.numeric(df_rf$Survived)-1 #R turns {0,1} into {1,2}, so I transform them back
+df_rf %>% select(-c("Name","Sex")) %>% add_count(probGroups) %>%
+  group_by(probGroups, n) %>% 
+  summarise_all("mean")
+```

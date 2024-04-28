@@ -1,0 +1,85 @@
+---
+title: "Week 7 - Rules-based Clustering for Segmentation"
+author: "Chris Healey"
+output:
+  html_document:
+    toc: true
+    theme: united
+---
+
+I want to use a common ML dataset, Titanic passengers, for our examples this week.
+
+Our main goal is to identify characteristics of passenger survival using rules-based clustering (covering continuous and categorical features).
+
+
+# Creating rules
+In this section, we try to identify clusters with a few simple rules.  
+
+## Load data
+
+```{r}
+library(tidyverse)
+library(ggplot2)
+#load data
+df <- read_csv("data/titanic.csv")
+```
+
+## Use cut to create groups 
+```{r}
+g <- ggplot(data=df) + geom_histogram(aes(x=Fare))
+print(g)
+```
+
+## Visualize Categorical Variables
+```{r}
+g <- ggplot(data=df) + geom_histogram(aes(x=Pclass))
+print(g)
+```
+
+
+
+Let's create a rule based on Fare using **cut**, turning the continuous variable Fare into a discrete one called Group
+
+```{r}
+df$FareGroup <- cut(df$Fare, breaks=c(-1,30, 75,600), labels=c("Low","Medium","High"))
+
+```
+
+We can combine this rule with the Sex variable to create 6 segments
+
+```{r}
+df <- df %>% mutate(segment = case_when(
+      FareGroup == "Low" & Sex == "male" ~ 1,
+      FareGroup == "Medium" & Sex == "male" ~ 2,
+      FareGroup == "High" & Sex == "male" ~ 3,
+      FareGroup == "Low" & Sex != "male" ~ 4,
+      FareGroup == "Medium" & Sex != "male" ~ 5,
+      TRUE ~ 6
+    ))
+
+df %>% write_csv("output_of_segmentation.csv")
+```
+
+
+## Segment profiles
+For the segment profiles, I summarize the results of each segment (using the original dataset columns -- without the scaling).
+
+```{r}
+df %>% add_count(segment) %>%
+  group_by(segment,n) %>% 
+  summarise_all("mean")
+```
+
+
+```{r}
+df %>% select(-c("Name","Sex","FareGroup")) %>% add_count(segment) %>%
+  group_by(segment,n) %>% 
+  summarise_all("mean")
+```
+
+## Example 2-D Visualization
+Here's visualization of the segments featuring two real-valued variables.
+```{r}
+g <- ggplot(df)+geom_point(aes(x=Fare,y=Age,colour=as.factor(segment)))
+print(g)
+```

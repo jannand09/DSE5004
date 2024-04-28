@@ -1,0 +1,86 @@
+---
+title: "Movies and the Bechdel Test"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(ggplot2)
+library(gt)
+
+movies <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-03-09/movies.csv')
+```
+
+
+
+
+```{r include=FALSE}
+directors <- movies %>% mutate(binary = ifelse(binary=="PASS",TRUE,FALSE)) %>% group_by(director) %>% summarize(count = n(), result = mean(binary)) %>% filter(count > 3) %>% arrange(desc(result))
+directors_100 <- directors %>% filter(result == 1) %>% pull(director)
+directors_0 <- directors %>% filter(result == 0) %>% pull(director)
+```
+
+Column {data-width=300}
+-----------------------------------------------------------------------
+### The Bechdel Test
+
+The Bechdel Test, or Bechdel-Wallace Test, sometimes called the Mo Movie Measure or Bechdel Rule is a simple test which names the following three criteria for movies:
+
+1. it has to have at least two women in it, who
+2. talk to each other, about
+3. something besides a man. 
+
+For a nice video introduction to the subject please check out The Bechdel Test for Women in Movies on feministfrequency.com. (source: https://bechdeltest.com/)
+
+### Summary stats
+
+- **Number of movies:** `r nrow(movies)`
+- **Year range:** `r min(movies$year)` to `r max(movies$year)`
+- **Directors with perfect scores (4+ movies):**  `r directors_100`
+- **Directors with no passing scores (4+ movies):** `r directors_0`
+
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Movies passing the Bechdel test over time
+
+```{r}
+yearly_summary <- movies %>% group_by(year, binary) %>% summarize(count = n())
+g <- ggplot(data=yearly_summary) + 
+  geom_line(aes(x=year,y=count,color=binary), size = 1) +
+  xlab("Year") +
+  ylab("Number of Movies") +
+  theme_classic() +
+  scale_color_discrete(name = "Test Result")
+print(g)
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Gross by Pass/Fail
+
+```{r}
+#movies$pass = as.factor(movies$binary)
+g <- ggplot(data=movies) + 
+  geom_boxplot(aes(y=as.factor(binary),x=parse_number(domgross_2013))) +
+  xlab("Domestic Gross (2013$)") +
+  ylab("Test Result")
+print(g)
+```
+
+### Top Grossing Films By Decade
+
+```{r}
+movies %>% mutate(decade = paste0(plyr::round_any(year,10, f=floor),"s")) %>% group_by(decade) %>% slice(which.max(domgross)) %>% ungroup() %>% select(decade, title, binary) %>% gt()
+
+movies %>% mutate(decade = paste0(plyr::round_any(year,10, f=floor),"s")) %>% group_by(decade) %>% slice(which.max(domgross)) %>% ungroup() %>% select(decade, title, binary) %>% write_csv("data/top_grossing.csv")
+```
+
+
+

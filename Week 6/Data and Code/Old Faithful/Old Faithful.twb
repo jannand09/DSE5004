@@ -1,0 +1,578 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20241.24.0308.0326                               -->
+<workbook original-version='18.1' source-build='2024.1.1 (20241.24.0308.0326)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AccessibleZoneTabOrder.true...AccessibleZoneTabOrder />
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+    <WorksheetBackgroundTransparency />
+    <ZoneBackgroundTransparency />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column caption='Wait Bin Parameter' datatype='integer' default-format='N' name='[Eruptions Parameter]' param-domain-type='range' role='measure' type='quantitative' value='16'>
+        <calculation class='tableau' formula='16' />
+        <range max='100' min='1' />
+      </column>
+    </datasource>
+    <datasource caption='Sheet1 (Old Faithful)' inline='true' name='federated.0kkapou0m93i8s146ktev0kzeh9r' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Old Faithful' name='excel-direct.0nzcati1nyl7ii1co75gq1lml8u9'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/Merrimack/Visual Data Exploration/Module 6/data/Old Faithful.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='excel-direct.0nzcati1nyl7ii1co75gq1lml8u9' name='Sheet1' table='[Sheet1$]' type='table'>
+          <columns gridOrigin='A1:C273:no:A1:C273:0' header='yes' outcome='2'>
+            <column datatype='integer' name='ID' ordinal='0' />
+            <column datatype='real' name='eruptions' ordinal='1' />
+            <column datatype='integer' name='waiting' ordinal='2' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='excel-direct.0nzcati1nyl7ii1co75gq1lml8u9' name='Sheet1' table='[Sheet1$]' type='table'>
+          <columns gridOrigin='A1:C273:no:A1:C273:0' header='yes' outcome='2'>
+            <column datatype='integer' name='ID' ordinal='0' />
+            <column datatype='real' name='eruptions' ordinal='1' />
+            <column datatype='integer' name='waiting' ordinal='2' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Sheet1]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:C273:no:A1:C273:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>2</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ID]</local-name>
+            <parent-name>[Sheet1]</parent-name>
+            <remote-alias>ID</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Sheet1_77B0A59F09D04D4D84EB1F824456763E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>eruptions</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[eruptions]</local-name>
+            <parent-name>[Sheet1]</parent-name>
+            <remote-alias>eruptions</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Sheet1_77B0A59F09D04D4D84EB1F824456763E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>waiting</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[waiting]</local-name>
+            <parent-name>[Sheet1]</parent-name>
+            <remote-alias>waiting</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Sheet1_77B0A59F09D04D4D84EB1F824456763E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Wait Bin Calc Field' datatype='real' name='[Calculation_1413285864515629056]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='IF [waiting]&gt;=0 THEN &#13;&#10;&#13;&#10;(INT([waiting]/&#13;&#10;  ROUND({(MAX([waiting])-MIN([waiting]))/[Parameters].[Eruptions Parameter]})&#13;&#10;))&#13;&#10;&#13;&#10;ELSE &#13;&#10;&#13;&#10;(INT([waiting]/&#13;&#10;  ROUND({(MAX([waiting])-MIN([waiting]))/[Parameters].[Eruptions Parameter]})&#13;&#10;)-1)&#13;&#10;&#13;&#10;END&#13;&#10;&#13;&#10;*(ROUND({(MAX([waiting])-MIN([waiting]))/[Parameters].[Eruptions Parameter]}))' />
+      </column>
+      <column datatype='integer' name='[ID]' role='dimension' type='ordinal' />
+      <column caption='Waiting (bin)' datatype='integer' name='[Waiting (bin)]' role='dimension' type='ordinal'>
+        <calculation class='bin' decimals='-2' formula='[waiting]' peg='0' size='4.18' />
+      </column>
+      <_.fcp.ObjectModelTableType.true...column caption='Sheet1' datatype='table' name='[__tableau_internal_object_id__].[Sheet1_77B0A59F09D04D4D84EB1F824456763E]' role='measure' type='quantitative' />
+      <column caption='Eruptions' datatype='real' name='[eruptions]' role='measure' type='quantitative' />
+      <column caption='Waiting' datatype='integer' name='[waiting]' role='measure' type='quantitative' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' _.fcp.SchemaViewerObjectModel.true...common-percentage='0.226002' _.fcp.SchemaViewerObjectModel.true...user-set-layout-v2='true' dim-ordering='alphabetic' measure-ordering='alphabetic' parameter-percentage='0.773998' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <field-sort-info field-sort-order-type='custom-order'>
+        <field-sort-custom-order field='ID' />
+        <field-sort-custom-order field='eruptions' />
+        <field-sort-custom-order field='waiting' />
+        <field-sort-custom-order field='Geometry (generated)' />
+        <field-sort-custom-order field='Latitude (generated)' />
+        <field-sort-custom-order field='Longitude (generated)' />
+        <field-sort-custom-order field='Waiting (bin)' />
+        <field-sort-custom-order field=':Measure Names' />
+        <field-sort-custom-order field='Multiple Values' />
+      </field-sort-info>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Wait Bin Parameter' datatype='integer' default-format='N' name='[Eruptions Parameter]' param-domain-type='range' role='measure' type='quantitative' value='16'>
+          <calculation class='tableau' formula='16' />
+          <range max='100' min='1' />
+        </column>
+      </datasource-dependencies>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='Sheet1' id='Sheet1_77B0A59F09D04D4D84EB1F824456763E'>
+            <properties context=''>
+              <relation connection='excel-direct.0nzcati1nyl7ii1co75gq1lml8u9' name='Sheet1' table='[Sheet1$]' type='table'>
+                <columns gridOrigin='A1:C273:no:A1:C273:0' header='yes' outcome='2'>
+                  <column datatype='integer' name='ID' ordinal='0' />
+                  <column datatype='real' name='eruptions' ordinal='1' />
+                  <column datatype='integer' name='waiting' ordinal='2' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Sheet1 (Old Faithful)' name='federated.0kkapou0m93i8s146ktev0kzeh9r' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0kkapou0m93i8s146ktev0kzeh9r'>
+            <column caption='Waiting (bin)' datatype='integer' name='[Waiting (bin)]' role='dimension' type='ordinal'>
+              <calculation class='bin' decimals='-2' formula='[waiting]' peg='0' size='4.18' />
+            </column>
+            <column-instance column='[waiting]' derivation='Count' name='[cnt:waiting:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Waiting (bin)]' derivation='None' name='[none:Waiting (bin):ok]' pivot='key' type='ordinal' />
+            <column caption='Waiting' datatype='integer' name='[waiting]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.0kkapou0m93i8s146ktev0kzeh9r].[cnt:waiting:qk]</rows>
+        <cols>[federated.0kkapou0m93i8s146ktev0kzeh9r].[none:Waiting (bin):ok]</cols>
+        <show-full-range>
+          <column>[federated.0kkapou0m93i8s146ktev0kzeh9r].[Waiting (bin)]</column>
+        </show-full-range>
+      </table>
+      <simple-id uuid='{DEBC2629-A99C-4D4F-ACE1-78309C040168}' />
+    </worksheet>
+    <worksheet name='Sheet 2'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Waiting Time to Next Erruption</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Sheet1 (Old Faithful)' name='federated.0kkapou0m93i8s146ktev0kzeh9r' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Wait Bin Parameter' datatype='integer' default-format='N' name='[Eruptions Parameter]' param-domain-type='range' role='measure' type='quantitative' value='16'>
+              <calculation class='tableau' formula='16' />
+              <range max='100' min='1' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0kkapou0m93i8s146ktev0kzeh9r'>
+            <column caption='Wait Bin Calc Field' datatype='real' name='[Calculation_1413285864515629056]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF [waiting]&gt;=0 THEN &#13;&#10;&#13;&#10;(INT([waiting]/&#13;&#10;  ROUND({(MAX([waiting])-MIN([waiting]))/[Parameters].[Eruptions Parameter]})&#13;&#10;))&#13;&#10;&#13;&#10;ELSE &#13;&#10;&#13;&#10;(INT([waiting]/&#13;&#10;  ROUND({(MAX([waiting])-MIN([waiting]))/[Parameters].[Eruptions Parameter]})&#13;&#10;)-1)&#13;&#10;&#13;&#10;END&#13;&#10;&#13;&#10;*(ROUND({(MAX([waiting])-MIN([waiting]))/[Parameters].[Eruptions Parameter]}))' />
+            </column>
+            <column-instance column='[Calculation_1413285864515629056]' derivation='None' name='[none:Calculation_1413285864515629056:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[waiting]' derivation='Sum' name='[sum:waiting:qk]' pivot='key' type='quantitative' />
+            <column caption='Waiting' datatype='integer' name='[waiting]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.0kkapou0m93i8s146ktev0kzeh9r].[sum:waiting:qk]</rows>
+        <cols>[federated.0kkapou0m93i8s146ktev0kzeh9r].[none:Calculation_1413285864515629056:ok]</cols>
+      </table>
+      <simple-id uuid='{F110053C-C2AF-4536-A832-1884BCB7DD21}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='Dashboard 1'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <datasources>
+        <datasource name='Parameters' />
+      </datasources>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Wait Bin Parameter' datatype='integer' default-format='N' name='[Eruptions Parameter]' param-domain-type='range' role='measure' type='quantitative' value='16'>
+          <calculation class='tableau' formula='16' />
+          <range max='100' min='1' />
+        </column>
+      </datasource-dependencies>
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98000' id='7' param='horz' type-v2='layout-flow' w='98400' x='800' y='1000'>
+            <zone h='98000' id='5' type-v2='layout-basic' w='95200' x='800' y='1000'>
+              <zone h='98000' id='3' name='Sheet 2' w='95200' x='800' y='1000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+            <zone fixed-size='32' h='98000' id='6' is-fixed='true' param='vert' type-v2='layout-flow' w='3200' x='96000' y='1000' />
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+        <zone h='8375' id='8' mode='slider' param='[Parameters].[Eruptions Parameter]' type-v2='paramctrl' w='32200' x='65200' y='1625' />
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='12' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='11' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
+                <zone fixed-size='280' h='98000' id='3' is-fixed='true' name='Sheet 2' w='95200' x='800' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='8375' id='8' mode='slider' param='[Parameters].[Eruptions Parameter]' type-v2='paramctrl' w='32200' x='65200' y='1625'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{ACFA3F3A-01BF-4D4B-AC11-0142699E8904}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='worksheet' name='Sheet 1' tab-color='#dec77b'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0kkapou0m93i8s146ktev0kzeh9r].[none:Waiting (bin):ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{12AFC60D-E9D8-44DE-B5B5-5DEAFB19939F}' />
+    </window>
+    <window class='worksheet' name='Sheet 2' tab-color='#dec77b'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='slider' param='[Parameters].[Eruptions Parameter]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0kkapou0m93i8s146ktev0kzeh9r].[none:ID:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{C9028F15-0AAD-430B-8802-1EAD43C40F77}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name='Sheet 2'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{01780DD3-77AE-464C-BF06-B8C5FB0C8A3F}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Dashboard 1' width='192'>
+      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
+      mwAAAABJRU5ErkJggg==
+    </thumbnail>
+    <thumbnail height='192' name='Sheet 1' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='192' name='Sheet 2' width='192'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>
