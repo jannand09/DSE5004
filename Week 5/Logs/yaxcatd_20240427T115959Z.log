@@ -36,3 +36,4 @@ yaxcatd (C:\Program Files\Tableau\Tableau 2024.1\bin\yaxcat\yaxcatd.exe) built a
 0.079ms; [no ensemble]::AggModelServiceImpl::mark_stats: 
 0.006ms; [no ensemble]::AggModelServiceImpl::ping: 
 0.163ms; [no ensemble]::AggModelServiceImpl::mark_stats: 
+stdin closed, exiting.
