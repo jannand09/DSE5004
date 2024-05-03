@@ -8,9 +8,7 @@ original_data <- original_data %>% column_to_rownames(., var = "CustomerID")
 
 data <- original_data
 
-# Drop irrelevant columns
-data <- data[, -c(7,18,19,20,21,23,24,25,26,27,28,29,30,31,32)]
-
+############################## Data Pre-Processing #############################
 
 # Convert monetary columns from character to numeric
 
@@ -55,18 +53,21 @@ data <- handle_na(data, "EquipmentLastMonth", "EquipmentRental")
 data <- handle_na(data, "DataOverTenure", "WirelessData")
 data <- handle_na(data, "DataLastMonth", "WirelessData")
 
-data$CardSpendMonth[is.na(data$CardSpendMonth)] <- median(data$CardSpendMonth)
+data$CardSpendMonth[is.na(data$CardSpendMonth)] <- median(data$CardSpendMonth, na.rm = T)
 
-# Derived Feature
 
 data$HHIncome <- parse_number(data$HHIncome)
+
+# Derived Features
+
 data$TotalOverTenure <- data$VoiceOverTenure + data$EquipmentOverTenure + data$DataOverTenure
 data$TotalByTenure <- data$TotalOverTenure / data$PhoneCoTenure
 data$TotalLastMonth <- data$VoiceLastMonth + data$EquipmentLastMonth + data$DataLastMonth
 
-data$LogIncome <- log10(data$HHIncome)
-data$LogTotalLastMonth <- log10(data$TotalLastMonth)
+# data$LogIncome <- log10(data$HHIncome)
+# data$LogTotalLastMonth <- log10(data$TotalLastMonth)
 
+########################### Exploratory Data Analysis ##########################
 
 data_occupation <- data %>%
   group_by(JobCategory) %>%
@@ -100,28 +101,28 @@ data_wireless <- data %>%
   group_by(WirelessData,n) %>%
   summarise(avgLastMonth = mean(TotalLastMonth))
 
-data <- data %>% mutate(segment = case_when(
-  EquipmentRental == "Yes" & WirelessData == "Yes" ~ 1,
-  EquipmentRental == "Yes" & WirelessData == "No" ~ 2,
-  EquipmentRental == "No" & WirelessData == "Yes" ~ 3,
-  EquipmentRental == "No" & WirelessData == "No" ~ 4,
-))
-
-data_segmented <- data %>% add_count(segment) %>%
-  group_by(segment,n) %>%
-  select_if(is.numeric) %>%
-  summarise_all("median")
+# data <- data %>% mutate(segment = case_when(
+#   EquipmentRental == "Yes" & WirelessData == "Yes" ~ 1,
+#   EquipmentRental == "Yes" & WirelessData == "No" ~ 2,
+#   EquipmentRental == "No" & WirelessData == "Yes" ~ 3,
+#   EquipmentRental == "No" & WirelessData == "No" ~ 4,
+# ))
+# 
+# data_segmented <- data %>% add_count(segment) %>%
+#   group_by(segment,n) %>%
+#   select_if(is.numeric) %>%
+#   summarise_all("median")
 
 e <- ggplot(data = data) +
   geom_histogram(aes(x=PhoneCoTenure), color="black", fill="darkred") +
   geom_vline(xintercept = mean(data$PhoneCoTenure), color="blue")
 print(e)
 
-f <- ggplot(data = data) +
-  geom_point(aes(x=LogIncome, y=LogTotalLastMonth), color="blue")
-print(f)
+# f <- ggplot(data = data) +
+#   geom_point(aes(x=LogIncome, y=LogTotalLastMonth), color="blue")
+# print(f)
 
-cor(data$LogIncome, data$LogTotalLastMonth)
+# cor(data$LogIncome, data$LogTotalLastMonth)
 
 g <- ggplot(data = data %>% select(Age, TVWatchingHours) %>%
               group_by(Age) %>%
@@ -129,6 +130,12 @@ g <- ggplot(data = data %>% select(Age, TVWatchingHours) %>%
   geom_col(aes(x=Age, y=AvgTVHours), fill="forestgreen")
 print(g)
 
+# missing_cols <- is.na(data$PhoneCoTenure) | is.na(data$CardSpendMonth) | is.na(data$TotalLastMonth)
+# 
+# data <- na.omit(data, subset = !missing_cols)
+
+
+summary(data %>% select(PhoneCoTenure, TotalLastMonth, CardSpendMonth))
 
 ###################### Rule Based Segmentation #################################
 
@@ -154,18 +161,18 @@ j <- ggplot(data = data) +
   geom_vline(xintercept=mean(data$PhoneCoTenure), na.rm = T, color="blue")
 print(j)
 
-data$TenureGroup <- cut(data$CardSpendMonth, breaks=c(-1,40,100), labels=c("Short", "Long"))
+data$TenureGroup <- cut(data$PhoneCoTenure, breaks=c(-1,40,100), labels=c("Short", "Long"))
 
 
 data <- data %>% mutate(segment = case_when(
-  LastMonthGroup == "Low" + CardSpendGroup =="Low" + TenureGroup =="Short" ~ 1,
-  LastMonthGroup == "Low" + CardSpendGroup =="Low" + TenureGroup =="Long" ~ 2,
-  LastMonthGroup == "Low" + CardSpendGroup =="High" + TenureGroup =="Short" ~ 3,
-  LastMonthGroup == "Low" + CardSpendGroup == "High" + TenureGroup == "Long" ~ 4,
-  LastMonthGroup == "High" + CardSpendGroup =="Low" + TenureGroup =="Short" ~ 5,
-  LastMonthGroup == "High" + CardSpendGroup =="Low" + TenureGroup =="Long" ~ 6,
-  LastMonthGroup == "High" + CardSpendGroup =="High" + TenureGroup =="Short" ~ 7,
-  LastMonthGroup == "High" + CardSpendGroup == "High" + TenureGroup == "Long" ~ 8
+  LastMonthGroup == "Low" & CardSpendGroup == "Low" & TenureGroup == "Short" ~ 1,
+  LastMonthGroup == "Low" & CardSpendGroup == "Low" & TenureGroup == "Long" ~ 2,
+  LastMonthGroup == "Low" & CardSpendGroup == "High" & TenureGroup == "Short" ~ 3,
+  LastMonthGroup == "Low" & CardSpendGroup == "High" & TenureGroup == "Long" ~ 4,
+  LastMonthGroup == "High" & CardSpendGroup == "Low" & TenureGroup == "Short" ~ 5,
+  LastMonthGroup == "High" & CardSpendGroup == "Low" & TenureGroup == "Long" ~ 6,
+  LastMonthGroup == "High" & CardSpendGroup == "High" & TenureGroup == "Short" ~ 7,
+  LastMonthGroup == "High" & CardSpendGroup == "High" & TenureGroup == "Long" ~ 8
 ))
 
 data$CustomerValue <- ifelse(data$segment %in% c(4,6,7,8),"High","Low")
@@ -183,3 +190,29 @@ data$ValueGroup <- cut(data$probValue, breaks=c(0.0,0.50,1.0),
                          labels=c("Low","High"))
 
 ###################### Unsupervised Learning Segmentation ######################
+
+# Standardize numeric variables
+k_points <- data %>% select(c("PhoneCoTenure", "TotalLastMonth", "CardSpendMonth"))
+k_points <- scale(k_points)
+
+
+
+# Select best number of k-values
+ks <- 1:12
+tot_within_ss <- sapply(ks, function(k) {
+  set.seed(1223)
+  cl <- kmeans(k_points, k)
+  cl$tot.withinss
+})
+plot(ks, tot_within_ss, type = "b")
+
+
+set.seed(1223)
+NUM_CLUSTERS <- 5
+kclust <- kmeans(k_points, centers = NUM_CLUSTERS, nstart=10)
+
+#add segments to original dataset
+data$kmeans_segment <- as.factor(kclust$cluster)
+
+
+write_xlsx(data)
