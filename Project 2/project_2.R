@@ -23,6 +23,7 @@ data$DataLastMonth <- parse_number(data$DataLastMonth)
 
 data$CardSpendMonth <- parse_number(data$CardSpendMonth)
 
+data$HHIncome <- parse_number(data$HHIncome)
 
 # Handle null values in monetary columns
 
@@ -54,15 +55,42 @@ data <- handle_na(data, "DataOverTenure", "WirelessData")
 data <- handle_na(data, "DataLastMonth", "WirelessData")
 
 data$CardSpendMonth[is.na(data$CardSpendMonth)] <- median(data$CardSpendMonth, na.rm = T)
+data$TVWatchingHours[is.na(data$TVWatchingHours)] <- mean(data$TVWatchingHours, na.rm = T)
 
-
-data$HHIncome <- parse_number(data$HHIncome)
 
 # Derived Features
 
 data$TotalOverTenure <- data$VoiceOverTenure + data$EquipmentOverTenure + data$DataOverTenure
 data$TotalByTenure <- data$TotalOverTenure / data$PhoneCoTenure
 data$TotalLastMonth <- data$VoiceLastMonth + data$EquipmentLastMonth + data$DataLastMonth
+
+
+data$TotalServices <- 0
+
+data[2,"EquipmentRental"]
+
+
+for (x in (1:nrow(data))) {
+  for (y in c("EquipmentRental","WirelessData","Multiline","VM","Pager","Internet",
+              "CallerID","CallWait","CallForward","ThreeWayCalling")) {
+    if (data[x, y]=="Yes") {
+      data[x, "TotalServices"] <- data[x, "TotalServices"] + 1
+    }
+  }
+}
+
+data$TotalDevices <- 0
+  
+for (x in (1:nrow(data))) {
+  for (y in c("Pager","OwnsPC","OwnsMobileDevice","OwnsGameSystem","OwnsFax")) {
+    if (data[x, y]=="Yes") {
+      data[x, "TotalDevices"] <- data[x, "TotalDevices"] + 1
+    } 
+  }
+  if (data[x,"TVWatchingHours"] != 0) {
+    data[x, "TotalDevices"] <- data[x, "TotalDevices"] + 1
+  }
+}
 
 # data$LogIncome <- log10(data$HHIncome)
 # data$LogTotalLastMonth <- log10(data$TotalLastMonth)
@@ -204,15 +232,19 @@ tot_within_ss <- sapply(ks, function(k) {
   cl <- kmeans(k_points, k)
   cl$tot.withinss
 })
-plot(ks, tot_within_ss, type = "b")
+plot(ks, tot_within_ss, type = "b", ylab = "Total Within Sum of Squares",
+     xlab = "Number of k Clusters", main = "Optimal Number of Clusters")
+
 
 
 set.seed(1223)
-NUM_CLUSTERS <- 5
+NUM_CLUSTERS <- 3
 kclust <- kmeans(k_points, centers = NUM_CLUSTERS, nstart=10)
 
 #add segments to original dataset
 data$kmeans_segment <- as.factor(kclust$cluster)
 
 
-write_xlsx(data)
+############################### Write to CSV ###################################
+
+write_csv(data, "segmented_data2.csv")
